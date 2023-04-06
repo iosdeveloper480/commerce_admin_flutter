@@ -1,4 +1,4 @@
-# ecommerece_admin
+# Ecommerece_admin
 
 A new Flutter project.
 
