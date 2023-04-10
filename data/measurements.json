@@ -1,0 +1,39 @@
+{
+  "success": true,
+  "categories": [
+    {
+      "id": "1",
+      "name": "Abayas",
+      "name_ar": "عبايات"
+    },
+    {
+      "id": "2",
+      "name": "Dresses",
+      "name_ar": "فساتين"
+    },
+    {
+      "id": "3",
+      "name": "Travel Wear",
+      "name_ar": "ملابس سفر"
+    },
+    {
+      "id": "4",
+      "name": "Mukhawar",
+      "name_ar": "مخاوير"
+    },
+    {
+      "id": "5",
+      "name": "Kaftans",
+      "name_ar": "قفاطين"
+    }
+  ],
+  "data": [
+    {"id":"1","cat":"1,2","name":"Bust","name_ar":"الصدر","hide":"0"},
+    {"id":"2","cat":"1,2","name":"Shoulders","name_ar":"الأكتاف","hide":"0"},
+    {"id":"3","cat":"1","name":"Sleeves","name_ar":"الكم","hide":"0"},
+    {"id":"4","cat":"1","name":"Length","name_ar":"الطول","hide":"0"},
+    {"id":"5","cat":"1","name":"Waist","name_ar":"الخصر","hide":"0"},
+    {"id":"6","cat":"1","name":"Hips","name_ar":"محيط الحوض","hide":"0"},
+    {"id":"7","cat":"3","name":"Pocket","name_ar":"Pocket","hide":"0"}
+  ]
+}

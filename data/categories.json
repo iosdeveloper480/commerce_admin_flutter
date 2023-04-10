@@ -1,0 +1,70 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": "1",
+            "shop_id": "0",
+            "name": "Abayas",
+            "name_ar": "عبايات",
+            "special": "200",
+            "slug": "abayas",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/categories\/1.png?t=1679894580",
+            "special_img": "http:\/\/172.20.30.149\/fatima\/assets\/img\/special.png?t=4354354565",
+            "offer_img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/categories\/1-offer.png?t=1673961538",
+            "size_img": "http:\/\/172.20.30.149\/fatima\/admin\/size_charts\/images\/1.png?t=1679460556",
+            "hide": "0"
+        },
+        {
+            "id": "2",
+            "shop_id": "0",
+            "name": "Dresses",
+            "name_ar": "فساتين",
+            "special": "300",
+            "slug": "dresses",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/categories\/2.png?t=1679894586",
+            "special_img": "http:\/\/172.20.30.149\/fatima\/assets\/img\/special.png?t=54654634",
+            "offer_img": "http:\/\/172.20.30.149\/fatima\/assets\/img\/offer.png",
+            "size_img": "",
+            "hide": "0"
+        },
+        {
+            "id": "3",
+            "shop_id": "0",
+            "name": "Travel Wear",
+            "name_ar": "ملابس سفر",
+            "special": "200",
+            "slug": "travel_wear",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/categories\/3.png?t=1679894596",
+            "special_img": "http:\/\/172.20.30.149\/fatima\/assets\/img\/special.png?t=56565678",
+            "offer_img": "http:\/\/172.20.30.149\/fatima\/assets\/img\/offer.png",
+            "size_img": null,
+            "hide": "0"
+        },
+        {
+            "id": "4",
+            "shop_id": "0",
+            "name": "Mukhawar",
+            "name_ar": "مخاوير",
+            "special": "0",
+            "slug": "mukhawar",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/categories\/4.png?t=1674039580",
+            "special_img": "http:\/\/172.20.30.149\/fatima\/assets\/img\/special.png",
+            "offer_img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/categories\/4-offer.png?t=1680521113",
+            "size_img": null,
+            "hide": "0"
+        },
+        {
+            "id": "5",
+            "shop_id": "0",
+            "name": "Kaftans",
+            "name_ar": "قفاطين",
+            "special": "0",
+            "slug": "kaftans",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/categories\/5.png?t=1674039616",
+            "special_img": "http:\/\/172.20.30.149\/fatima\/assets\/img\/special.png",
+            "offer_img": "http:\/\/172.20.30.149\/fatima\/assets\/img\/offer.png",
+            "size_img": null,
+            "hide": "0"
+        }
+    ]
+}

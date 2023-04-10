@@ -5,6 +5,22 @@ class CustomColors {
     return const Color.fromARGB(255, 255, 213, 0);
   }
 
+  static Color get shadow {
+    return const Color.fromARGB(51, 39, 44, 51);
+  }
+
+  static Color get black {
+    return Colors.black;
+  }
+
+  static Color get blue {
+    return Colors.blue;
+  }
+
+  static Color get white {
+    return Colors.white;
+  }
+
   static Color get purple {
     return Colors.purple;
   }

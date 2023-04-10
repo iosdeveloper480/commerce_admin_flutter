@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "data": [
+    {"id":"1","name_ar":"أبو ظبي","name":"Abu Dhabi","country_id":"1","hide":"0"},
+    {"id":"2","name_ar":"دبي","name":"Dubai","country_id":"1","hide":"0"},
+    {"id":"3","name_ar":"الشارقة","name":"Sharjah","country_id":"1","hide":"0"},
+    {"id":"4","name_ar":"ام القيوين","name":"Umm Al Quwain","country_id":"1","hide":"0"},
+    {"id":"5","name_ar":"عجمان","name":"Ajman","country_id":"1","hide":"0"},
+    {"id":"6","name_ar":"رأس الخيمة","name":"Ras Al-Khaimah","country_id":"1","hide":"0"},
+    {"id":"7","name_ar":"الفجيرة","name":"Fujairah","country_id":"1","hide":"0"},
+    {"id":"8","name_ar":"العين","name":"AL Ain","country_id":"1","hide":"0"}
+  ]
+}

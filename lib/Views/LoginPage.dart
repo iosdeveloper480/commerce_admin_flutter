@@ -21,7 +21,6 @@ class LoginPage extends StatelessWidget {
       body: SafeArea(
         child: Center(
           child: Container(
-            height: 370,
             margin: const EdgeInsets.symmetric(horizontal: 20),
             padding: const EdgeInsets.all(20),
             decoration: BoxDecoration(
@@ -37,6 +36,7 @@ class LoginPage extends StatelessWidget {
               ],
             ),
             child: Column(
+              mainAxisSize: MainAxisSize.min,
               children: [
                 Container(
                   margin: const EdgeInsets.symmetric(vertical: 20),

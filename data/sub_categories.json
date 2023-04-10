@@ -1,0 +1,181 @@
+{
+    "success": true,
+    "data": [
+        {
+            "id": "2",
+            "shop_id": "0",
+            "cat_id": "1",
+            "name": "Abaya sets",
+            "name_ar": "طقم عباية",
+            "slug": "abaya_sets",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/2.png?t=1679905695",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "3",
+            "shop_id": "0",
+            "cat_id": "1",
+            "name": "Embroidered abaya",
+            "name_ar": "عباية مطرزة",
+            "slug": "embroidered_abaya",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/3.png?t=1679905730",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "4",
+            "shop_id": "0",
+            "cat_id": "1",
+            "name": "Floral Abaya",
+            "name_ar": "عباية زهور",
+            "slug": "floral_abaya",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/4.png?t=1679905581",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "5",
+            "shop_id": "0",
+            "cat_id": "1",
+            "name": "Casual Abaya",
+            "name_ar": "عباية كاجوال",
+            "slug": "casual_abaya",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/5.png?t=1679905620",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "6",
+            "shop_id": "0",
+            "cat_id": "1",
+            "name": "Colored Abaya",
+            "name_ar": "عباية ملونة",
+            "slug": "colored_abaya",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/6.png?t=1679905772",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "7",
+            "shop_id": "0",
+            "cat_id": "1",
+            "name": "Work Abaya",
+            "name_ar": "عباية عمل",
+            "slug": "work_abaya",
+            "img": "https:\/\/cdn.johrh.com\/wp-content\/uploads\/2022\/03\/19170114\/11132-71-scaled.jpg",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "8",
+            "shop_id": "0",
+            "cat_id": "1",
+            "name": "Pocket Abaya",
+            "name_ar": "عباية بجيب",
+            "slug": "pocket_abaya",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/8.png?t=1679905809",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "9",
+            "shop_id": "0",
+            "cat_id": "2",
+            "name": "Modest Dresses",
+            "name_ar": "فساتين محتشمة",
+            "slug": "modest_dresses",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/9.png?t=1679905855",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "10",
+            "shop_id": "0",
+            "cat_id": "2",
+            "name": "Under Abayas",
+            "name_ar": "تحت العباءة",
+            "slug": "under_abayas",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/10.png?t=1679905938",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "11",
+            "shop_id": "0",
+            "cat_id": "2",
+            "name": "Evening Dresses",
+            "name_ar": "فساتين السهرة",
+            "slug": "evening_dresses",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/11.png?t=1679906025",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "12",
+            "shop_id": "0",
+            "cat_id": "3",
+            "name": "Modest Travel Wear",
+            "name_ar": "ملابس سفر محتشمة",
+            "slug": "modest_travel_wear",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/12.png?t=1679907651",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "13",
+            "shop_id": "0",
+            "cat_id": "3",
+            "name": "Travel Wear Set",
+            "name_ar": "طقم ملابس سفر",
+            "slug": "travel_wear_set",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/13.png?t=1679907618",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "14",
+            "shop_id": "0",
+            "cat_id": "3",
+            "name": "Travel Blouse",
+            "name_ar": "بلوزة للسفر",
+            "slug": "travel_blouse",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/14.png?t=1679907548",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "15",
+            "shop_id": "0",
+            "cat_id": "3",
+            "name": "Floral Dresses",
+            "name_ar": "فساتين بزهور",
+            "slug": "floral_dresses",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/15.png?t=1679907507",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "16",
+            "shop_id": "0",
+            "cat_id": "3",
+            "name": "Summer Travel Wear",
+            "name_ar": "ملابس سفر صيفية",
+            "slug": "summer_travel_wear",
+            "img": "http:\/\/172.20.30.149\/fatima\/admin\/categories\/sub_categories\/16.png?t=1679907498",
+            "sort": "0",
+            "hide": "0"
+        },
+        {
+            "id": "17",
+            "shop_id": "0",
+            "cat_id": "4",
+            "name": "Mukhawar",
+            "name_ar": "Mukhawar",
+            "slug": "mukhawar",
+            "img": null,
+            "sort": "0",
+            "hide": "0"
+        }
+    ]
+}

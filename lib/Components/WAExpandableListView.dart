@@ -66,8 +66,8 @@ class _WAExpandableListViewState extends State<WAExpandableListView> {
             MaterialPageRoute(builder: (context) => const LocationsPage()));
         break;
       case 'Categories':
-        Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const CategoriesPage()));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => CategoriesPage()));
         break;
       case 'Features':
         Navigator.push(context,
@@ -344,11 +344,11 @@ List<LeftMenuModel> leftMenuModelList = [
     Icons.motorcycle,
   ),
   LeftMenuModel(
-    'Sizes',
+    '',
     [
       LeftMenuItemModel('Sizes', Icons.format_size),
-      LeftMenuItemModel('Size Chart', Icons.bar_chart),
-      LeftMenuItemModel('Measurements', Icons.scale),
+      // LeftMenuItemModel('Size Chart', Icons.bar_chart),
+      // LeftMenuItemModel('Measurements', Icons.scale),
     ],
     Icons.directions_car,
   ),

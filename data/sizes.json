@@ -1,0 +1,60 @@
+{
+  "success": true,
+  "categories": [
+    {
+      "id": "1",
+      "name": "Abayas",
+      "name_ar": "عبايات"
+    },
+    {
+      "id": "2",
+      "name": "Dresses",
+      "name_ar": "فساتين"
+    },
+    {
+      "id": "3",
+      "name": "Travel Wear",
+      "name_ar": "ملابس سفر"
+    },
+    {
+      "id": "4",
+      "name": "Mukhawar",
+      "name_ar": "مخاوير"
+    },
+    {
+      "id": "5",
+      "name": "Kaftans",
+      "name_ar": "قفاطين"
+    }
+  ],
+  "data": [
+    {
+      "id": "1",
+      "name": "50",
+      "name_ar": "50",
+      "cat": "1,2",
+      "hide": "0"
+    },
+    {
+      "id": "2",
+      "name": "40",
+      "name_ar": "40",
+      "cat": "1",
+      "hide": "0"
+    },
+    {
+      "id": "3",
+      "name": "30",
+      "name_ar": "30",
+      "cat": "1",
+      "hide": "0"
+    },
+    {
+      "id": "4",
+      "name": "20",
+      "name_ar": "20",
+      "cat": "1",
+      "hide": "0"
+    }
+  ]
+}
