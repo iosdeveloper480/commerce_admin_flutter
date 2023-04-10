@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "data": [
+    {"id":"1","type":"1","img":"http:\/\/172.20.30.149\/fatima\/admin\/app_alerts\/images\/1.png?t=1679831333","name":"Slider 1","name_ar":"Slider 1","link_id":"4","link":"https:\/\/www.google.com\/","hide":"0"},
+    {"id":"2","type":"1","img":"http:\/\/172.20.30.149\/fatima\/admin\/app_alerts\/images\/2.png?t=1679831347","name":"Slider 1","name_ar":"Slider 1","link_id":"4","link":"https:\/\/www.google.com\/","hide":"0"}
+  ]
+}

@@ -19,6 +19,7 @@ class BaseDrawerPage extends StatefulWidget {
 class _BaseDrawerPageState extends State<BaseDrawerPage> {
   @override
   Widget build(BuildContext context) {
+    final bool displayMobileLayout = MediaQuery.of(context).size.width < 500;
     return Scaffold(
       appBar: AppBar(
         title: widget.title,

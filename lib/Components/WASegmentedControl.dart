@@ -55,7 +55,9 @@ class _WASegmentedControlState extends State<WASegmentedControl> {
 
   @override
   Widget build(BuildContext context) {
+    final bool displayMobileLayout = MediaQuery.of(context).size.width < 500;
     return Container(
+      width: displayMobileLayout ? double.infinity : (_items.length * 200),
       decoration: BoxDecoration(
         color: Colors.green,
         borderRadius: BorderRadius.circular(5),

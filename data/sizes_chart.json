@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "data": [
+    {"id":"1","cat":"1","name":"Abaya sizes","name_ar":"Abaya sizes","img":"http:\/\/172.20.30.149\/fatima\/admin\/size_charts\/images\/1.png?t=1674711940","hide":"0"},
+    {"id":"2","cat":"2","name":"Dresses","name_ar":"Dresses","img":"http:\/\/172.20.30.149\/fatima\/admin\/size_charts\/images\/2.png?t=1674712390","hide":"0"}
+  ]
+}

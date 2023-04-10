@@ -1,0 +1,24 @@
+{
+  "success": true,
+  "data": [
+    {"id":"1","type":"2","shop_id":"0","banner":"0","cat":"1","img":"http:\/\/172.20.30.149\/fatima\/admin\/categories\/sliders\/1.png?t=1678597871","name":"Slider 1","name_ar":"Slider 1","link_id":"1","link":"shops,1","hide":"0"},
+    {"id":"2","type":"1","shop_id":"0","banner":"0","cat":"1","img":"http:\/\/172.20.30.149\/fatima\/admin\/categories\/sliders\/2.png?t=1679828695","name":"Slider 2","name_ar":"Slider 2","link_id":"","link":"https:\/\/www.google.com\/","hide":"0"},
+    {"id":"3","type":"4","shop_id":"0","banner":"0","cat":"1","img":"http:\/\/172.20.30.149\/fatima\/admin\/categories\/sliders\/3.png?t=1679828671","name":"Slider 3","name_ar":"Slider 3","link_id":"1","link":"categories,1","hide":"0"},
+    {"id":"4","type":"0","shop_id":"0","banner":"0","cat":"2","img":"https:\/\/i.pinimg.com\/originals\/02\/cf\/cf\/02cfcffac595c832c514d58704cd82ce.jpg","name":"Slider 1","name_ar":"Slider 1","link_id":"","link":null,"hide":"0"},
+    {"id":"5","type":"0","shop_id":"0","banner":"0","cat":"2","img":"https:\/\/i.pinimg.com\/originals\/c3\/46\/37\/c34637acf3eed4a16436e1177f23c559.png","name":"Slider 2","name_ar":"Slider 2","link_id":"","link":null,"hide":"0"},
+    {"id":"6","type":"0","shop_id":"0","banner":"0","cat":"3","img":"http:\/\/172.20.30.149\/fatima\/admin\/categories\/sliders\/6.png?t=1674025420","name":"Slider 1","name_ar":"Slider 1","link_id":"","link":null,"hide":"0"},
+    {"id":"7","type":"2","shop_id":"0","banner":"1","cat":"0","img":"http:\/\/172.20.30.149\/fatima\/admin\/banners\/images\/7.png?t=1679828406","name":"Banner 1","name_ar":"Banner 1","link_id":"1","link":"shops,1","hide":"0"},
+    {"id":"8","type":"2","shop_id":"0","banner":"1","cat":"0","img":"http:\/\/172.20.30.149\/fatima\/admin\/banners\/images\/8.png?t=1679828415","name":"Banner 2","name_ar":"Banner 2","link_id":"2","link":"shops,2","hide":"0"},
+    {"id":"9","type":"2","shop_id":"0","banner":"1","cat":"0","img":"http:\/\/172.20.30.149\/fatima\/admin\/banners\/images\/9.png?t=1679828425","name":"Banner 3","name_ar":"Banner 3","link_id":"1","link":"shops,1","hide":"0"},
+    {"id":"10","type":"2","shop_id":"0","banner":"0","cat":"0","img":"http:\/\/172.20.30.149\/fatima\/admin\/sliders\/images\/10.png?t=1679828373","name":"Slider 1","name_ar":"Slider 1","link_id":"1","link":"shops,1","hide":"0"},
+    {"id":"11","type":"4","shop_id":"0","banner":"0","cat":"0","img":"http:\/\/172.20.30.149\/fatima\/admin\/sliders\/images\/11.png?t=1679828385","name":"Slider 2","name_ar":"Slider 2","link_id":"1","link":"categories,1","hide":"0"},
+    {"id":"12","type":"3","shop_id":"0","banner":"0","cat":"0","img":"http:\/\/172.20.30.149\/fatima\/admin\/sliders\/images\/12.png?t=1679828392","name":"Slider 3 ","name_ar":"Slider 3","link_id":"1","link":"products,1","hide":"0"},
+    {"id":"13","type":"0","shop_id":"1","banner":"0","cat":"0","img":"https:\/\/cdn.johrh.com\/wp-content\/uploads\/2022\/04\/17155301\/%D8%B9%D9%85%D9%84%D9%8A%D8%A9.jpg","name":"Slider 1","name_ar":"Slider 1","link_id":"","link":null,"hide":"0"},
+    {"id":"14","type":"0","shop_id":"1","banner":"0","cat":"0","img":"https:\/\/cdn.johrh.com\/wp-content\/uploads\/2022\/04\/17155412\/%D8%AF%D9%88%D8%A7%D9%85%D8%A7%D8%AA.jpg?t=5465465","name":"Slider 2","name_ar":"Slider 2","link_id":"","link":null,"hide":"0"},
+    {"id":"15","type":"0","shop_id":"1","banner":"0","cat":"0","img":"https:\/\/cdn.johrh.com\/wp-content\/uploads\/2022\/04\/17155513\/%D9%85%D9%86%D8%A7%D8%B3%D8%A8%D8%A7%D8%AA.jpg","name":"Slider 3","name_ar":"Slider 3","link_id":"","link":null,"hide":"0"},
+    {"id":"16","type":"0","shop_id":"2","banner":"0","cat":"0","img":"http:\/\/172.20.30.149\/fatima\/admin\/shops\/sliders\/16.png?t=1674024627","name":null,"name_ar":null,"link_id":"","link":null,"hide":"0"},
+    {"id":"17","type":"0","shop_id":"2","banner":"0","cat":"0","img":"http:\/\/172.20.30.149\/fatima\/admin\/shops\/sliders\/17.png?t=1674026617","name":null,"name_ar":null,"link_id":"","link":null,"hide":"0"},
+    {"id":"18","type":"0","shop_id":"2","banner":"0","cat":"0","img":"http:\/\/172.20.30.149\/fatima\/admin\/shops\/sliders\/18.png?t=1680242889","name":null,"name_ar":null,"link_id":"0","link":null,"hide":"1"},
+    {"id":"19","type":"0","shop_id":"2","banner":"0","cat":"0","img":"http:\/\/172.20.30.149\/fatima\/admin\/shops\/sliders\/19.png?t=1680415822","name":null,"name_ar":null,"link_id":"0","link":null,"hide":"1"}
+  ]
+}

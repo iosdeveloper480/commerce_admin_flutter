@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:fatima_admin/Cells/SizesChartCell.dart';
 import 'package:fatima_admin/Components/WAButton.dart';
 import 'package:fatima_admin/Components/WASegmentedControl.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
@@ -85,12 +86,21 @@ class _SizesPageState extends State<SizesPage> {
                   child: ListView.builder(
                     itemCount: sizesList.length,
                     itemBuilder: (BuildContext context, int index) {
-                      //Row Container
-                      return SizesCell(
-                        size: sizesList[index],
-                        onTapEdit: onTapEdit,
-                        onTapDelete: onTapDelete,
-                      );
+                      if (selected == 1) {
+                        //Row Container
+                        return SizesChartCell(
+                          sizeChart: sizesList[index],
+                          onTapEdit: onTapEdit,
+                          onTapDelete: onTapDelete,
+                        );
+                      } else {
+                        //Row Container
+                        return SizesCell(
+                          size: sizesList[index],
+                          onTapEdit: onTapEdit,
+                          onTapDelete: onTapDelete,
+                        );
+                      }
                     },
                   ),
                 ),

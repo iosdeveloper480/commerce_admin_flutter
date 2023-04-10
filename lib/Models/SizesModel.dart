@@ -7,6 +7,7 @@ class SizesModel {
   final String name;
   final String nameAr;
   final String cat;
+  final String? img;
   final String? hide;
   final List<String> categories;
 
@@ -17,6 +18,7 @@ class SizesModel {
     required this.cat,
     required this.hide,
     required this.categories,
+    required this.img,
   });
 
   factory SizesModel.fromJson(
@@ -39,6 +41,7 @@ class SizesModel {
       cat: json['cat'],
       hide: json['hide'],
       categories: catArray,
+      img: json['img'],
     );
   }
 }
