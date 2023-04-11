@@ -1,31 +1,40 @@
 import 'package:fatima_admin/Helpers/CustomColors.dart';
 import 'package:flutter/material.dart';
 
-class WACardView extends StatelessWidget {
-  WACardView({Key? key}) : super(key: key);
-  // final Widget body;
+class WACardView extends StatefulWidget {
+  WACardView({
+    Key? key,
+    required this.body,
+    this.innerMargin = const EdgeInsets.all(8),
+    this.cardMargin = const EdgeInsets.symmetric(vertical: 5),
+    this.borderRaius = 4,
+    this.backgroundColor = Colors.white,
+  }) : super(key: key);
+
+  final Widget body;
+  final EdgeInsets innerMargin;
+  final EdgeInsets cardMargin;
+  final double borderRaius;
+  final Color backgroundColor;
 
   @override
+  State<WACardView> createState() => _WACardViewState();
+}
+
+class _WACardViewState extends State<WACardView> {
+  @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      margin: const EdgeInsets.all(5),
-      padding: const EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: Colors.grey,
-        shape: BoxShape.rectangle,
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: CustomColors.shadow,
-            spreadRadius: 1,
-            blurRadius: 2,
-            offset: const Offset(0, 0), // changes position of shadow
-          ),
-        ],
+    return Card(
+      color: widget.backgroundColor,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(widget.borderRaius),
       ),
-      child: Expanded(
-        child: Text('Widget 1'),
+      margin: widget.cardMargin,
+      shadowColor: Colors.yellow,
+      elevation: 3,
+      child: Container(
+        margin: widget.innerMargin,
+        child: widget.body,
       ),
     );
   }

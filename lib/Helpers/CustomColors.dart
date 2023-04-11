@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class CustomColors {
+  CustomColors._();
+
   static Color get primary {
     return const Color.fromARGB(255, 255, 213, 0);
   }
@@ -12,6 +14,8 @@ class CustomColors {
   static Color get black {
     return Colors.black;
   }
+
+  static Color transparent = Colors.transparent;
 
   static Color get blue {
     return Colors.blue;

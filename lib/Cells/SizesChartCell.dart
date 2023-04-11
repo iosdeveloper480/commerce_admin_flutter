@@ -1,11 +1,10 @@
 import 'package:fatima_admin/Components/WAButton.dart';
 import 'package:fatima_admin/Components/WATagListView.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
+import 'package:fatima_admin/Helpers/WAConstants.dart';
 import 'package:fatima_admin/Models/SizesModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-typedef FallbackFunction<T> = void Function(T item);
 
 class SizesChartCell extends StatefulWidget {
   const SizesChartCell({

@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:fatima_admin/Cells/CategoryCell.dart';
+import 'package:fatima_admin/Components/WABottomButton.dart';
 import 'package:fatima_admin/Components/WAButton.dart';
 import 'package:fatima_admin/Components/WASegmentedControl.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
@@ -98,21 +99,9 @@ class _CategoriesPageState extends State<CategoriesPage> {
               ],
             ),
           ),
-          Expanded(
-            flex: 0,
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              width: double.infinity,
-              height: 45,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(4)),
-              clipBehavior: Clip.hardEdge,
-              child: WAButton(
-                title: buttonTitle,
-                onPressed: onPressed,
-                backgroundColor: CustomColors.primary,
-                textColor: CustomColors.black,
-              ),
-            ),
+          WABottomButton(
+            title: buttonTitle,
+            onPressed: onPressed,
           ),
         ],
       ),

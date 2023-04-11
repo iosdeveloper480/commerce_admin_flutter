@@ -1,4 +1,5 @@
 import 'package:fatima_admin/Cells/CategoryCell.dart';
+import 'package:fatima_admin/Helpers/WAConstants.dart';
 import 'package:flutter/material.dart';
 
 class WASegmentedControl extends StatefulWidget {
@@ -75,7 +76,7 @@ class _WASegmentedControlState extends State<WASegmentedControl> {
           ),
         ],
       ),
-      margin: const EdgeInsets.all(10),
+      margin: const EdgeInsets.symmetric(vertical: 5),
       child: SizedBox(
         height: 40,
         width: double.infinity,

@@ -1,10 +1,9 @@
 import 'package:fatima_admin/Components/WAButton.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
+import 'package:fatima_admin/Helpers/WAConstants.dart';
 import 'package:fatima_admin/Models/SliderModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-typedef FallbackFunction<T> = void Function(T item);
 
 class SliderCell extends StatefulWidget {
   const SliderCell({
@@ -12,9 +11,11 @@ class SliderCell extends StatefulWidget {
     required this.slider,
     required this.onTapEdit,
     required this.onTapDelete,
+    this.onTapImage,
   }) : super(key: key);
   final FallbackFunction<SliderModel> onTapEdit;
   final FallbackFunction<SliderModel> onTapDelete;
+  final FallbackFunction<SliderModel>? onTapImage;
   final SliderModel slider;
 
   @override
@@ -25,7 +26,7 @@ class _SliderCellState extends State<SliderCell> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.all(5),
+      margin: const EdgeInsets.symmetric(vertical: 5),
       shadowColor: Colors.yellow,
       elevation: 3,
       child: Column(
@@ -33,18 +34,25 @@ class _SliderCellState extends State<SliderCell> {
         mainAxisSize: MainAxisSize.min,
         children: [
           Container(
-            padding: const EdgeInsets.all(4),
             child: Container(
               clipBehavior: Clip.hardEdge,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(4),
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topLeft: Radius.circular(4), topRight: Radius.circular(4)),
               ),
               width: double.infinity,
-              height: 180,
-              child: FadeInImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(widget.slider.img ?? ''),
-                placeholder: const AssetImage('images/logo.png'),
+              height: 200,
+              child: GestureDetector(
+                onTap: () {
+                  if (widget.onTapImage != null) {
+                    widget.onTapImage!(widget.slider);
+                  }
+                },
+                child: FadeInImage(
+                  fit: BoxFit.cover,
+                  image: NetworkImage(widget.slider.img ?? ''),
+                  placeholder: const AssetImage('images/logo.png'),
+                ),
               ),
             ),
           ),

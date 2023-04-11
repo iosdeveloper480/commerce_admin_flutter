@@ -2,11 +2,10 @@ import 'package:fatima_admin/Components/WAButton.dart';
 import 'package:fatima_admin/Components/WAIconButton.dart';
 import 'package:fatima_admin/Components/WATagListView.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
+import 'package:fatima_admin/Helpers/WAConstants.dart';
 import 'package:fatima_admin/Models/CategoryModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-typedef FallbackFunction<T> = void Function(T item);
 
 class FeatureCell extends StatefulWidget {
   const FeatureCell({
@@ -42,7 +41,7 @@ class _FeatureCellState extends State<FeatureCell> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      margin: const EdgeInsets.all(5),
+      margin: const EdgeInsets.symmetric(vertical: 5),
       shadowColor: Colors.yellow,
       elevation: 3,
       child: Column(

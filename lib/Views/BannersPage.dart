@@ -1,11 +1,13 @@
 import 'dart:convert';
 
 import 'package:fatima_admin/Cells/SliderCell.dart';
+import 'package:fatima_admin/Components/WABottomButton.dart';
 import 'package:fatima_admin/Components/WAButton.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
 import 'package:fatima_admin/Models/SliderModel.dart';
 import 'package:fatima_admin/Views/BaseDrawerPage.dart';
+import 'package:fatima_admin/Views/ImageViewPage.dart';
 import 'package:flutter/material.dart';
 
 class BannersPage extends StatefulWidget {
@@ -42,6 +44,17 @@ class _BannersPageState extends State<BannersPage> {
     print(slider.id);
   }
 
+  onTapImage(SliderModel slider) {
+    List<String> items = [slider.img!];
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (context) => ImageViewPage(items: items, selectedIndex: 0),
+        fullscreenDialog: true,
+      ),
+    );
+  }
+
   onPressAddBanner() {}
   @override
   Widget build(BuildContext context) {
@@ -57,25 +70,14 @@ class _BannersPageState extends State<BannersPage> {
                   slider: slidersList[index],
                   onTapEdit: onTapEdit,
                   onTapDelete: onTapDelete,
+                  onTapImage: onTapImage,
                 );
               },
             ),
           ),
-          Expanded(
-            flex: 0,
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              width: double.infinity,
-              height: 45,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(4)),
-              clipBehavior: Clip.hardEdge,
-              child: WAButton(
-                title: buttonTitle,
-                onPressed: onPressAddBanner,
-                backgroundColor: CustomColors.primary,
-                textColor: CustomColors.black,
-              ),
-            ),
+          WABottomButton(
+            title: buttonTitle,
+            onPressed: onPressAddBanner,
           ),
         ],
       ),

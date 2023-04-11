@@ -36,7 +36,10 @@ class _BaseDrawerPageState extends State<BaseDrawerPage> {
           },
         ),
       ),
-      body: SafeArea(child: widget.body),
+      body: SafeArea(
+        minimum: const EdgeInsets.all(8),
+        child: widget.body,
+      ),
     );
   }
 }

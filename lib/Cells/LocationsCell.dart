@@ -1,10 +1,9 @@
 import 'package:fatima_admin/Components/WAButton.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
+import 'package:fatima_admin/Helpers/WAConstants.dart';
 import 'package:fatima_admin/Models/CountryModel.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-
-typedef FallbackFunction<T> = void Function(T item);
 
 class LocationsCell extends StatefulWidget {
   const LocationsCell({
