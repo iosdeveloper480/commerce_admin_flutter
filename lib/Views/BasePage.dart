@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 
 class BasePage extends StatefulWidget {
@@ -18,6 +20,18 @@ class _BasePageState extends State<BasePage> {
     return Scaffold(
       appBar: AppBar(
         title: widget.title,
+        flexibleSpace: ClipRect(
+          child: BackdropFilter(
+            filter: ImageFilter.blur(
+              sigmaX: 0,
+              sigmaY: 100.0,
+              tileMode: TileMode.mirror,
+            ),
+            child: Container(
+              color: Colors.yellow.withOpacity(0.5),
+            ),
+          ),
+        ),
       ),
       body: SafeArea(
         maintainBottomViewPadding: true,

@@ -1,8 +1,8 @@
 import 'package:fatima_admin/Components/WAButton.dart';
+import 'package:fatima_admin/Components/WACardView.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
 import 'package:fatima_admin/Helpers/WAConstants.dart';
 import 'package:fatima_admin/Models/SliderModel.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class SliderCell extends StatefulWidget {
@@ -25,11 +25,8 @@ class SliderCell extends StatefulWidget {
 class _SliderCellState extends State<SliderCell> {
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.symmetric(vertical: 5),
-      shadowColor: Colors.yellow,
-      elevation: 3,
-      child: Column(
+    return WACardView(
+      body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [

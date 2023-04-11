@@ -1,12 +1,11 @@
-import 'package:fatima_admin/Helpers/CustomColors.dart';
 import 'package:flutter/material.dart';
 
 class WACardView extends StatefulWidget {
   WACardView({
     Key? key,
     required this.body,
-    this.innerMargin = const EdgeInsets.all(8),
-    this.cardMargin = const EdgeInsets.symmetric(vertical: 5),
+    this.innerMargin = const EdgeInsets.all(4),
+    this.cardMargin = const EdgeInsets.all(10),
     this.borderRaius = 4,
     this.backgroundColor = Colors.white,
   }) : super(key: key);

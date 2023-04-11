@@ -1,4 +1,3 @@
-import 'package:fatima_admin/Cells/CategoryCell.dart';
 import 'package:fatima_admin/Helpers/WAConstants.dart';
 import 'package:flutter/material.dart';
 
@@ -56,30 +55,25 @@ class _WASegmentedControlState extends State<WASegmentedControl> {
 
   @override
   Widget build(BuildContext context) {
-    final bool displayMobileLayout = MediaQuery.of(context).size.width < 500;
+    final bool displayMobileLayout = MediaQuery.of(context).size.width < 900;
     return Container(
-      width: displayMobileLayout ? double.infinity : (_items.length * 200),
-      decoration: BoxDecoration(
-        color: Colors.green,
-        borderRadius: BorderRadius.circular(5),
-        border: Border.all(
-          color: Colors.white,
-          width: 1,
-          style: BorderStyle.solid,
-        ),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey.withOpacity(0.3),
-            spreadRadius: 5,
-            blurRadius: 3,
-            offset: const Offset(0, 3), // changes position of shadow
-          ),
-        ],
-      ),
-      margin: const EdgeInsets.symmetric(vertical: 5),
-      child: SizedBox(
+      color: Colors.transparent,
+      width: displayMobileLayout
+          ? MediaQuery.of(context).size.width
+          : (_items.length * 200),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+      child: Container(
         height: 40,
-        width: double.infinity,
+        clipBehavior: Clip.hardEdge,
+        decoration: BoxDecoration(
+          color: Colors.green,
+          borderRadius: BorderRadius.circular(5),
+          border: Border.all(
+            color: Colors.green,
+            width: 1,
+            style: BorderStyle.solid,
+          ),
+        ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.stretch,

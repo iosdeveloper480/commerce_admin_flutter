@@ -1,4 +1,3 @@
-import 'package:fatima_admin/Helpers/CustomColors.dart';
 import 'package:fatima_admin/Views/AcceptedOrdersPage.dart';
 import 'package:fatima_admin/Views/AddressesPage.dart';
 import 'package:fatima_admin/Views/AppAlertsPage.dart';
@@ -51,6 +50,12 @@ class WAExpandableListView extends StatefulWidget {
 }
 
 class _WAExpandableListViewState extends State<WAExpandableListView> {
+  DrawerHeader drawerHeader = DrawerHeader(
+    decoration: BoxDecoration(
+      color: Colors.blue,
+    ),
+    child: Text('Drawer Header'),
+  );
   onTap(SectionModel sectionModel) {}
   onTap2(LeftMenuItemModel leftMenuItemModel) {
     switch (leftMenuItemModel.name) {

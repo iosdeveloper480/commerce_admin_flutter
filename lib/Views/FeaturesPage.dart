@@ -1,14 +1,12 @@
 import 'dart:convert';
 
+import 'package:fatima_admin/Cells/FeatureCell.dart';
 import 'package:fatima_admin/Components/WABottomButton.dart';
-import 'package:fatima_admin/Components/WAButton.dart';
 import 'package:fatima_admin/Components/WASegmentedControl.dart';
-import 'package:fatima_admin/Helpers/CustomColors.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
 import 'package:fatima_admin/Models/CategoryModel.dart';
-import 'package:fatima_admin/Cells/FeatureCell.dart';
 import 'package:fatima_admin/Views/BaseDrawerPage.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 class FeaturesPage extends StatefulWidget {
   const FeaturesPage({Key? key}) : super(key: key);
@@ -67,17 +65,17 @@ class _FeaturesPageState extends State<FeaturesPage> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
+          WASegmentedControl(
+            onPressed: onCatSelected,
+            items: const [
+              'Features',
+              'Options',
+            ],
+          ),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                WASegmentedControl(
-                  onPressed: onCatSelected,
-                  items: const [
-                    'Features',
-                    'Options',
-                  ],
-                ),
                 Expanded(
                   child: ListView.builder(
                     itemCount: categories.length,

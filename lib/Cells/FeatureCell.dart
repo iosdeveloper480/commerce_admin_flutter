@@ -1,4 +1,6 @@
+import 'package:fatima_admin/Cells/ShopCell.dart';
 import 'package:fatima_admin/Components/WAButton.dart';
+import 'package:fatima_admin/Components/WACardView.dart';
 import 'package:fatima_admin/Components/WAIconButton.dart';
 import 'package:fatima_admin/Components/WATagListView.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
@@ -40,11 +42,8 @@ class _FeatureCellState extends State<FeatureCell> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.symmetric(vertical: 5),
-      shadowColor: Colors.yellow,
-      elevation: 3,
-      child: Column(
+    return WACardView(
+      body: Column(
         children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -83,19 +82,13 @@ class _FeatureCellState extends State<FeatureCell> {
                               crossAxisAlignment: CrossAxisAlignment.start,
                               mainAxisSize: MainAxisSize.min,
                               children: [
-                                Text(
-                                  "Name: ${widget.category.name}",
-                                  textAlign: TextAlign.left,
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold),
-                                  maxLines: 2,
+                                WATitleSubtitleRow(
+                                  title: 'Name:- ',
+                                  subtitle: widget.category.name,
                                 ),
-                                Text(
-                                  'Name Ar: ${widget.category.nameAr}',
-                                  textAlign: TextAlign.left,
-                                  style: const TextStyle(
-                                      fontWeight: FontWeight.bold),
-                                  maxLines: 2,
+                                WATitleSubtitleRow(
+                                  title: 'Name Ar:- ',
+                                  subtitle: widget.category.nameAr,
                                 ),
                               ],
                             ),

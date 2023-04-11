@@ -1,8 +1,9 @@
+import 'package:fatima_admin/Cells/ShopCell.dart';
 import 'package:fatima_admin/Components/WAButton.dart';
+import 'package:fatima_admin/Components/WACardView.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
 import 'package:fatima_admin/Helpers/WAConstants.dart';
 import 'package:fatima_admin/Models/CountryModel.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class LocationsCell extends StatefulWidget {
@@ -32,11 +33,8 @@ class _LocationsCellState extends State<LocationsCell> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.all(5),
-      shadowColor: Colors.yellow,
-      elevation: 3,
-      child: Column(
+    return WACardView(
+      body: Column(
         children: [
           Container(
             alignment: Alignment.topLeft,
@@ -53,17 +51,13 @@ class _LocationsCellState extends State<LocationsCell> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisSize: MainAxisSize.min,
                         children: [
-                          Text(
-                            "Name: ${widget.country.name}",
-                            textAlign: TextAlign.left,
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                            maxLines: 2,
+                          WATitleSubtitleRow(
+                            title: 'Name:- ',
+                            subtitle: widget.country.name,
                           ),
-                          Text(
-                            'Name Ar: ${widget.country.nameAr}',
-                            textAlign: TextAlign.left,
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                            maxLines: 2,
+                          WATitleSubtitleRow(
+                            title: 'Name Ar:- ',
+                            subtitle: widget.country.nameAr,
                           ),
                         ],
                       ),
@@ -72,11 +66,17 @@ class _LocationsCellState extends State<LocationsCell> {
                 ),
                 Visibility(
                   visible: widget.isCountry,
-                  child: Text('Code: ${widget.country.code}'),
+                  child: WATitleSubtitleRow(
+                    title: 'Code:- ',
+                    subtitle: widget.country.code ?? '',
+                  ),
                 ),
                 Visibility(
                   visible: !widget.isCountry,
-                  child: Text('Country: ${widget.country.country}'),
+                  child: WATitleSubtitleRow(
+                    title: 'Country:- ',
+                    subtitle: widget.country.country ?? '',
+                  ),
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,

@@ -1,11 +1,10 @@
 import 'dart:convert';
 
-import 'package:fatima_admin/Cells/SizesChartCell.dart';
-import 'package:fatima_admin/Components/WAButton.dart';
-import 'package:fatima_admin/Components/WASegmentedControl.dart';
-import 'package:fatima_admin/Helpers/CustomColors.dart';
-import 'package:fatima_admin/Helpers/JSONLoader.dart';
 import 'package:fatima_admin/Cells/SizesCell.dart';
+import 'package:fatima_admin/Cells/SizesChartCell.dart';
+import 'package:fatima_admin/Components/WABottomButton.dart';
+import 'package:fatima_admin/Components/WASegmentedControl.dart';
+import 'package:fatima_admin/Helpers/JSONLoader.dart';
 import 'package:fatima_admin/Models/SizesModel.dart';
 import 'package:fatima_admin/Views/BaseDrawerPage.dart';
 import 'package:flutter/material.dart';
@@ -107,21 +106,9 @@ class _SizesPageState extends State<SizesPage> {
               ],
             ),
           ),
-          Expanded(
-            flex: 0,
-            child: Container(
-              margin: const EdgeInsets.symmetric(horizontal: 10),
-              width: double.infinity,
-              height: 45,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(4)),
-              clipBehavior: Clip.hardEdge,
-              child: WAButton(
-                title: buttonTitle,
-                onPressed: onPressAddSize,
-                backgroundColor: CustomColors.primary,
-                textColor: CustomColors.black,
-              ),
-            ),
+          WABottomButton(
+            title: buttonTitle,
+            onPressed: onPressAddSize,
           ),
         ],
       ),
