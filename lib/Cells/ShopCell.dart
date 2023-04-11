@@ -1,7 +1,6 @@
 import 'package:fatima_admin/Components/WACardView.dart';
 import 'package:fatima_admin/Components/WAImageView.dart';
 import 'package:flutter/cupertino.dart';
-import 'package:flutter/material.dart';
 
 class ShopCell extends StatefulWidget {
   const ShopCell({Key? key}) : super(key: key);
@@ -20,6 +19,7 @@ class _ShopCellState extends State<ShopCell> {
 
   @override
   Widget build(BuildContext context) {
+    //this comment is only for testing the git push from android studio
     return WACardView(
       innerMargin: const EdgeInsets.only(left: 0, right: 0, top: 0, bottom: 10),
       body: Column(
