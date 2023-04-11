@@ -41,16 +41,31 @@ class _BaseDrawerPageState extends State<BaseDrawerPage> {
           ),
         ),
       ),
-      drawer: Drawer(
-        backgroundColor: CustomColors.purple,
-        child: ListView.builder(
-          itemCount: leftMenuModelList.length,
-          itemBuilder: (context, i) {
-            return WAExpandableListView(
-              leftMenuModel: leftMenuModelList[i],
-              index: i,
-            );
-          },
+      drawer: Expanded(
+        child: Drawer(
+          backgroundColor: CustomColors.purple,
+          child: Column(
+            children: [
+              const DrawerHeader(
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("images/logo.png"),
+                        fit: BoxFit.cover)),
+                child: Text("Header"),
+              ),
+              Expanded(
+                child: ListView.builder(
+                  itemCount: leftMenuModelList.length,
+                  itemBuilder: (context, i) {
+                    return WAExpandableListView(
+                      leftMenuModel: leftMenuModelList[i],
+                      index: i,
+                    );
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
       ),
       body: SafeArea(
