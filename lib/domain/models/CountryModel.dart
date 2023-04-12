@@ -1,7 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
 @JsonSerializable()
-class SizesModel {
+class CountryModel {
   final String id;
   final String name;
   final String nameAr;
@@ -9,7 +9,7 @@ class SizesModel {
   final String? country;
   final String? hide;
 
-  SizesModel({
+  CountryModel({
     required this.id,
     required this.name,
     required this.nameAr,
@@ -18,8 +18,8 @@ class SizesModel {
     required this.hide,
   });
 
-  factory SizesModel.fromJson(Map<String, dynamic> json) {
-    return SizesModel(
+  factory CountryModel.fromJson(Map<String, dynamic> json) {
+    return CountryModel(
       id: json['id'],
       name: json['name'],
       nameAr: json['name_ar'],
@@ -33,13 +33,13 @@ class SizesModel {
 @JsonSerializable()
 class CountryResponseModel {
   final bool success;
-  final List<SizesModel> data;
+  final List<CountryModel> data;
   CountryResponseModel({required this.success, required this.data});
   factory CountryResponseModel.fromJson(Map<String, dynamic> json) {
-    var entry = <SizesModel>[];
+    var entry = <CountryModel>[];
     if (json['data'] != null) {
       json['data'].forEach((v) {
-        entry.add(SizesModel.fromJson(v));
+        entry.add(CountryModel.fromJson(v));
       });
     }
     return CountryResponseModel(success: json['success'], data: entry);

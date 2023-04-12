@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:fatima_admin/Cells/SizesCell.dart';
 import 'package:fatima_admin/Cells/SizesChartCell.dart';
-import 'package:fatima_admin/Components/WABottomButton.dart';
-import 'package:fatima_admin/Components/WASegmentedControl.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
-import 'package:fatima_admin/Models/SizesModel.dart';
-import 'package:fatima_admin/Views/BaseDrawerPage.dart';
+import 'package:fatima_admin/domain/models/SizesModel.dart';
+import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/presentation/widgets/WASegmentedControl.dart';
+import 'package:fatima_admin/views/BaseDrawerPage.dart';
 import 'package:flutter/material.dart';
 
 class SizesPage extends StatefulWidget {

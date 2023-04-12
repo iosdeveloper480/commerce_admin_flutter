@@ -1,4 +1,4 @@
-import 'package:fatima_admin/Helpers/CustomColors.dart';
+import 'package:fatima_admin/config/CustomColors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTheme {

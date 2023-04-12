@@ -1,28 +1,31 @@
 import 'dart:convert';
 
-import 'package:fatima_admin/Cells/FeatureCell.dart';
-import 'package:fatima_admin/Components/WABottomButton.dart';
-import 'package:fatima_admin/Components/WASegmentedControl.dart';
+import 'package:fatima_admin/Cells/CategoryCell.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
-import 'package:fatima_admin/Models/CategoryModel.dart';
-import 'package:fatima_admin/Views/BaseDrawerPage.dart';
+import 'package:fatima_admin/domain/models/CategoryModel.dart';
+import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/presentation/widgets/WASegmentedControl.dart';
+import 'package:fatima_admin/views/BaseDrawerPage.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class FeaturesPage extends StatefulWidget {
-  const FeaturesPage({Key? key}) : super(key: key);
-  final String title = 'Features';
+class CategoriesPage extends StatefulWidget {
+  const CategoriesPage({Key? key}) : super(key: key);
+  final String title = 'Categories';
 
   @override
-  State<FeaturesPage> createState() => _FeaturesPageState();
+  State<CategoriesPage> createState() => _CategoriesPageState();
 }
 
-class _FeaturesPageState extends State<FeaturesPage> {
+class _CategoriesPageState extends State<CategoriesPage> {
   late List<CategoryModel> categories = [];
-  bool isFeatured = true;
-  String buttonTitle = 'Add Feature';
+  bool catSelected = false;
+  String buttonTitle = 'Add Category';
+
   @override
   void initState() {
     super.initState();
+    catSelected = true;
     loadData('categories');
   }
 
@@ -39,12 +42,12 @@ class _FeaturesPageState extends State<FeaturesPage> {
     setState(() {
       if (selected == 0) {
         loadData('categories');
-        isFeatured = true;
-        buttonTitle = 'Add Feature';
+        catSelected = true;
+        buttonTitle = 'Add Category';
       } else {
         loadData('sub_categories');
-        isFeatured = false;
-        buttonTitle = 'Add Feature Option';
+        catSelected = false;
+        buttonTitle = 'Add Sub Category';
       }
     });
   }
@@ -61,29 +64,29 @@ class _FeaturesPageState extends State<FeaturesPage> {
   @override
   Widget build(BuildContext context) {
     return BaseDrawerPage(
-      title: const Text('Features'),
+      title: const Text('Categories'),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
-          WASegmentedControl(
-            onPressed: onCatSelected,
-            items: const [
-              'Features',
-              'Options',
-            ],
-          ),
           Expanded(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
+                WASegmentedControl(
+                  onPressed: onCatSelected,
+                  items: const [
+                    'Categories',
+                    'Sub Categories',
+                  ],
+                ),
                 Expanded(
                   child: ListView.builder(
                     itemCount: categories.length,
                     itemBuilder: (BuildContext context, int index) {
                       //Row Container
-                      return FeatureCell(
+                      return CategoryCell(
+                        isCategory: catSelected,
                         category: categories[index],
-                        isFeatured: isFeatured,
                         onTapEdit: onTapEdit,
                         onTapDelete: onTapDelete,
                       );

@@ -1,9 +1,9 @@
-import 'package:fatima_admin/Components/WAButton.dart';
-import 'package:fatima_admin/Components/WACardView.dart';
-import 'package:fatima_admin/Components/WANetworkImageView.dart';
-import 'package:fatima_admin/Helpers/CustomColors.dart';
-import 'package:fatima_admin/Helpers/WAConstants.dart';
-import 'package:fatima_admin/Models/SliderModel.dart';
+import 'package:fatima_admin/config/CustomColors.dart';
+import 'package:fatima_admin/domain/models/SliderModel.dart';
+import 'package:fatima_admin/presentation/widgets/WAButton.dart';
+import 'package:fatima_admin/presentation/widgets/WACardView.dart';
+import 'package:fatima_admin/presentation/widgets/WANetworkImageView.dart';
+import 'package:fatima_admin/utils/WAConstants.dart';
 import 'package:flutter/material.dart';
 
 class SliderCell extends StatefulWidget {

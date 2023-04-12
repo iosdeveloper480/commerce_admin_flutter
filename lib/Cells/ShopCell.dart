@@ -1,12 +1,10 @@
-import 'package:fatima_admin/Components/WACardView.dart';
-import 'package:fatima_admin/Components/WAIconButton.dart';
-import 'package:fatima_admin/Components/WAImageView.dart';
-import 'package:fatima_admin/Components/WANetworkImageView.dart';
-import 'package:fatima_admin/Components/WATitleSubtitleRow.dart';
-import 'package:fatima_admin/Helpers/CustomColors.dart';
-import 'package:fatima_admin/Helpers/WAConstants.dart';
-import 'package:fatima_admin/Models/ShopModel.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:fatima_admin/config/CustomColors.dart';
+import 'package:fatima_admin/domain/models/ShopModel.dart';
+import 'package:fatima_admin/presentation/widgets/WACardView.dart';
+import 'package:fatima_admin/presentation/widgets/WAIconButton.dart';
+import 'package:fatima_admin/presentation/widgets/WANetworkImageView.dart';
+import 'package:fatima_admin/presentation/widgets/WATitleSubtitleRow.dart';
+import 'package:fatima_admin/utils/WAConstants.dart';
 import 'package:flutter/material.dart';
 
 class ShopCell extends StatefulWidget {

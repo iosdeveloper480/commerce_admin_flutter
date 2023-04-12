@@ -1,10 +1,6 @@
-import 'package:fatima_admin/Components/WAButton.dart';
-import 'package:fatima_admin/Components/WANetworkImageView.dart';
-import 'package:fatima_admin/Components/WATagListView.dart';
-import 'package:fatima_admin/Helpers/CustomColors.dart';
-import 'package:fatima_admin/Helpers/WAConstants.dart';
-import 'package:fatima_admin/Models/SizesModel.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:fatima_admin/domain/models/SizesModel.dart';
+import 'package:fatima_admin/presentation/widgets/WANetworkImageView.dart';
+import 'package:fatima_admin/utils/WAConstants.dart';
 import 'package:flutter/material.dart';
 
 class SizesChartCell extends StatefulWidget {

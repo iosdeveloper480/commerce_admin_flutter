@@ -1,10 +1,9 @@
-import 'package:fatima_admin/Cells/ShopCell.dart';
-import 'package:fatima_admin/Components/WAButton.dart';
-import 'package:fatima_admin/Components/WACardView.dart';
-import 'package:fatima_admin/Components/WATitleSubtitleRow.dart';
-import 'package:fatima_admin/Helpers/CustomColors.dart';
-import 'package:fatima_admin/Helpers/WAConstants.dart';
-import 'package:fatima_admin/Models/CountryModel.dart';
+import 'package:fatima_admin/config/CustomColors.dart';
+import 'package:fatima_admin/domain/models/CountryModel.dart';
+import 'package:fatima_admin/presentation/widgets/WAButton.dart';
+import 'package:fatima_admin/presentation/widgets/WACardView.dart';
+import 'package:fatima_admin/presentation/widgets/WATitleSubtitleRow.dart';
+import 'package:fatima_admin/utils/WAConstants.dart';
 import 'package:flutter/material.dart';
 
 class LocationsCell extends StatefulWidget {
@@ -15,9 +14,9 @@ class LocationsCell extends StatefulWidget {
     required this.onTapDelete,
     this.isCountry = false,
   }) : super(key: key);
-  final FallbackFunction<SizesModel> onTapEdit;
-  final FallbackFunction<SizesModel> onTapDelete;
-  final SizesModel country;
+  final FallbackFunction<CountryModel> onTapEdit;
+  final FallbackFunction<CountryModel> onTapDelete;
+  final CountryModel country;
   final bool isCountry;
 
   @override

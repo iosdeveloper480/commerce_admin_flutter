@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 import 'package:fatima_admin/Cells/ShopCell.dart';
-import 'package:fatima_admin/Components/WABottomButton.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
-import 'package:fatima_admin/Models/ShopModel.dart';
 import 'package:fatima_admin/Views/BaseDrawerPage.dart';
 import 'package:fatima_admin/Views/ShopEditPage.dart';
+import 'package:fatima_admin/domain/models/ShopModel.dart';
+import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
 import 'package:flutter/material.dart';
 
 class ShopsPage extends StatefulWidget {

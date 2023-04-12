@@ -1,13 +1,12 @@
 import 'dart:convert';
 
 import 'package:fatima_admin/Cells/LocationsCell.dart';
-import 'package:fatima_admin/Components/WABottomButton.dart';
-import 'package:fatima_admin/Components/WASegmentedControl.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
-import 'package:fatima_admin/Views/BaseDrawerPage.dart';
+import 'package:fatima_admin/domain/models/CountryModel.dart';
+import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/presentation/widgets/WASegmentedControl.dart';
+import 'package:fatima_admin/views/BaseDrawerPage.dart';
 import 'package:flutter/material.dart';
-
-import '../Models/CountryModel.dart';
 
 class LocationsPage extends StatefulWidget {
   const LocationsPage({Key? key}) : super(key: key);
@@ -18,7 +17,7 @@ class LocationsPage extends StatefulWidget {
 }
 
 class _LocationsPageState extends State<LocationsPage> {
-  late List<SizesModel> countries = [];
+  late List<CountryModel> countries = [];
   bool isCountry = true;
   String buttonTitle = 'Add Country';
 
@@ -50,11 +49,11 @@ class _LocationsPageState extends State<LocationsPage> {
     });
   }
 
-  onTapEdit(SizesModel country) {
+  onTapEdit(CountryModel country) {
     print(country.id);
   }
 
-  onTapDelete(SizesModel country) {
+  onTapDelete(CountryModel country) {
     print(country.id);
   }
 

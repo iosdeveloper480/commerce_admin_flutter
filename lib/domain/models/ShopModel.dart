@@ -1,4 +1,3 @@
-import 'package:fatima_admin/Models/CategoryModel.dart';
 import 'package:json_annotation/json_annotation.dart';
 
 @JsonSerializable()

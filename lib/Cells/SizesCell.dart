@@ -1,9 +1,9 @@
-import 'package:fatima_admin/Components/WAButton.dart';
-import 'package:fatima_admin/Components/WACardView.dart';
-import 'package:fatima_admin/Components/WATagListView.dart';
-import 'package:fatima_admin/Helpers/CustomColors.dart';
-import 'package:fatima_admin/Helpers/WAConstants.dart';
-import 'package:fatima_admin/Models/SizesModel.dart';
+import 'package:fatima_admin/config/CustomColors.dart';
+import 'package:fatima_admin/domain/models/SizesModel.dart';
+import 'package:fatima_admin/presentation/widgets/WAButton.dart';
+import 'package:fatima_admin/presentation/widgets/WACardView.dart';
+import 'package:fatima_admin/presentation/widgets/WATagListView.dart';
+import 'package:fatima_admin/utils/WAConstants.dart';
 import 'package:flutter/material.dart';
 
 class SizesCell extends StatefulWidget {

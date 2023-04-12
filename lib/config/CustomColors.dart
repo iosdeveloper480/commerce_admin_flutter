@@ -4,7 +4,8 @@ class CustomColors {
   CustomColors._();
 
   static Color get primary {
-    return const Color.fromARGB(255, 255, 213, 0);
+    // return const Color.fromARGB(255, 255, 213, 0);
+    return colorFrom('009688');
   }
 
   static Color get shadow {
@@ -56,5 +57,10 @@ class CustomColors {
     };
 
     return MaterialColor(color.value, shades);
+  }
+
+  static Color colorFrom(String hex) {
+    final hexCode = hex.replaceAll('#', '');
+    return Color(int.parse('FF$hex', radix: 16));
   }
 }

@@ -1,25 +1,23 @@
 import 'dart:convert';
 
 import 'package:fatima_admin/Cells/SliderCell.dart';
-import 'package:fatima_admin/Components/WABottomButton.dart';
-import 'package:fatima_admin/Components/WAButton.dart';
-import 'package:fatima_admin/Helpers/CustomColors.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
-import 'package:fatima_admin/Models/SliderModel.dart';
-import 'package:fatima_admin/Views/BaseDrawerPage.dart';
-import 'package:fatima_admin/Views/ImageViewPage.dart';
+import 'package:fatima_admin/domain/models/SliderModel.dart';
+import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/views/BaseDrawerPage.dart';
+import 'package:fatima_admin/views/ImageViewPage.dart';
 import 'package:flutter/material.dart';
 
-class SlidersPage extends StatefulWidget {
-  const SlidersPage({Key? key}) : super(key: key);
+class BannersPage extends StatefulWidget {
+  const BannersPage({Key? key}) : super(key: key);
 
   @override
-  State<SlidersPage> createState() => _SlidersPageState();
+  State<BannersPage> createState() => _BannersPageState();
 }
 
-class _SlidersPageState extends State<SlidersPage> {
+class _BannersPageState extends State<BannersPage> {
   late List<SliderModel> slidersList = [];
-  String buttonTitle = 'Add Slider';
+  String buttonTitle = 'Add Banner';
 
   @override
   void initState() {
@@ -30,7 +28,8 @@ class _SlidersPageState extends State<SlidersPage> {
   loadData(String fileName) {
     JSONLoader().loadJsonData(fileName).then((value) => {
           setState(() {
-            slidersList = SliderResponseModel.fromJson(json.decode(value)).data;
+            slidersList =
+                SliderResponseModel.fromJson2(json.decode(value)).data;
           })
         });
   }
@@ -54,11 +53,11 @@ class _SlidersPageState extends State<SlidersPage> {
     );
   }
 
-  onPressAddSlider() {}
+  onPressAddBanner() {}
   @override
   Widget build(BuildContext context) {
     return BaseDrawerPage(
-      title: Text('Sliders'),
+      title: const Text('Banners'),
       body: Column(
         children: [
           Expanded(
@@ -76,7 +75,7 @@ class _SlidersPageState extends State<SlidersPage> {
           ),
           WABottomButton(
             title: buttonTitle,
-            onPressed: onPressAddSlider,
+            onPressed: onPressAddBanner,
           ),
         ],
       ),

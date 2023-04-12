@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-import 'package:fatima_admin/Components/WAButton.dart';
-import 'package:fatima_admin/Helpers/CustomColors.dart';
+import 'package:fatima_admin/config/CustomColors.dart';
+import 'package:fatima_admin/presentation/widgets/WAButton.dart';
 import 'package:flutter/material.dart';
 
 class WABottomButton extends StatefulWidget {

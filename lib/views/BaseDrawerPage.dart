@@ -1,7 +1,7 @@
 import 'dart:ui';
 
-import 'package:fatima_admin/Components/WAExpandableListView.dart';
-import 'package:fatima_admin/Helpers/CustomColors.dart';
+import 'package:fatima_admin/config/CustomColors.dart';
+import 'package:fatima_admin/presentation/widgets/WAExpandableListView.dart';
 import 'package:flutter/material.dart';
 
 class BaseDrawerPage extends StatefulWidget {
@@ -33,8 +33,8 @@ class _BaseDrawerPageState extends State<BaseDrawerPage> {
             child: BackdropFilter(
               blendMode: BlendMode.src,
               filter: ImageFilter.blur(
-                sigmaX: 10,
-                sigmaY: 50,
+                sigmaX: 20,
+                sigmaY: 20,
                 tileMode: TileMode.mirror,
               ),
               child: Container(

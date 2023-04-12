@@ -1,4 +1,4 @@
-import 'package:fatima_admin/Helpers/WAConstants.dart';
+import 'package:fatima_admin/utils/WAConstants.dart';
 import 'package:flutter/material.dart';
 
 class WAImageView extends StatefulWidget {

@@ -1,11 +1,11 @@
 import 'dart:convert';
 
 import 'package:fatima_admin/Cells/SliderCell.dart';
-import 'package:fatima_admin/Components/WABottomButton.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
-import 'package:fatima_admin/Models/SliderModel.dart';
-import 'package:fatima_admin/Views/BaseDrawerPage.dart';
-import 'package:fatima_admin/Views/ImageViewPage.dart';
+import 'package:fatima_admin/domain/models/SliderModel.dart';
+import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/views/BaseDrawerPage.dart';
+import 'package:fatima_admin/views/ImageViewPage.dart';
 import 'package:flutter/material.dart';
 
 class AppAlertsPage extends StatefulWidget {

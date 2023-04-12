@@ -1,6 +1,5 @@
-import 'package:fatima_admin/Helpers/CustomTheme.dart';
 import 'package:fatima_admin/Views/LoginPage.dart';
-import 'package:fatima_admin/Views/MyHomePage.dart';
+import 'package:fatima_admin/config/CustomTheme.dart';
 import 'package:flutter/material.dart';
 
 void main() {
