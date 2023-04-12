@@ -31,9 +31,10 @@ class _WABottomButtonState extends State<WABottomButton> {
       child: Stack(
         children: [
           BackdropFilter(
-            filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+            blendMode: BlendMode.src,
+            filter: ImageFilter.blur(sigmaX: 15.0, sigmaY: 15.0),
             child: Container(
-              color: Colors.transparent.withOpacity(0),
+              color: CustomColors.primary.withOpacity(0.1),
             ),
           ),
           Container(

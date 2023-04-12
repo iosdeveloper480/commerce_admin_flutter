@@ -30,13 +30,14 @@ class _BaseDrawerPageState extends State<BaseDrawerPage> {
         backgroundColor: Colors.white,
         flexibleSpace: ClipRect(
           child: BackdropFilter(
+            blendMode: BlendMode.src,
             filter: ImageFilter.blur(
-              sigmaX: 0,
+              sigmaX: 100,
               sigmaY: 100.0,
               tileMode: TileMode.mirror,
             ),
             child: Container(
-              color: Colors.yellow.withOpacity(0.5),
+              color: CustomColors.primary.withOpacity(0.1),
             ),
           ),
         ),
