@@ -1,3 +1,4 @@
+import 'package:fatima_admin/config/CustomColors.dart';
 import 'package:fatima_admin/utils/WAConstants.dart';
 import 'package:flutter/material.dart';
 
@@ -66,10 +67,10 @@ class _WASegmentedControlState extends State<WASegmentedControl> {
         height: 40,
         clipBehavior: Clip.hardEdge,
         decoration: BoxDecoration(
-          color: Colors.green,
+          color: CustomColors.primary,
           borderRadius: BorderRadius.circular(5),
           border: Border.all(
-            color: Colors.green,
+            color: CustomColors.primary,
             width: 1,
             style: BorderStyle.solid,
           ),
