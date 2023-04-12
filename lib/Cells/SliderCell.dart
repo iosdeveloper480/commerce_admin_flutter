@@ -1,5 +1,6 @@
 import 'package:fatima_admin/Components/WAButton.dart';
 import 'package:fatima_admin/Components/WACardView.dart';
+import 'package:fatima_admin/Components/WANetworkImageView.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
 import 'package:fatima_admin/Helpers/WAConstants.dart';
 import 'package:fatima_admin/Models/SliderModel.dart';
@@ -45,11 +46,12 @@ class _SliderCellState extends State<SliderCell> {
                     widget.onTapImage!(widget.slider);
                   }
                 },
-                child: FadeInImage(
-                  fit: BoxFit.cover,
-                  image: NetworkImage(widget.slider.img ?? ''),
-                  placeholder: const AssetImage('images/logo.png'),
-                ),
+                child: WANetworkImageView(imageUrl: widget.slider.img ?? ''),
+                // FadeInImage(
+                //   fit: BoxFit.cover,
+                //   image: NetworkImage(widget.slider.img ?? ''),
+                //   placeholder: const AssetImage('images/logo.png'),
+                // ),
               ),
             ),
           ),

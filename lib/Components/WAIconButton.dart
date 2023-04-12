@@ -25,6 +25,21 @@ class WAIconButton extends StatefulWidget {
 }
 
 class _WAIconButtonState extends State<WAIconButton> {
+  List<BoxShadow> shadows = [];
+  @override
+  void initState() {
+    super.initState();
+    if (widget.backgroundColor != Colors.transparent) {
+      shadows.clear();
+      shadows.add(BoxShadow(
+        color: Colors.grey.withOpacity(0.5),
+        spreadRadius: 2,
+        blurRadius: 5,
+        offset: const Offset(0, 3), // changes position of shadow
+      ));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -33,14 +48,7 @@ class _WAIconButtonState extends State<WAIconButton> {
         decoration: BoxDecoration(
           color: widget.backgroundColor,
           borderRadius: BorderRadius.circular(widget.borderRadius),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.withOpacity(0.5),
-              spreadRadius: 2,
-              blurRadius: 5,
-              offset: Offset(0, 3), // changes position of shadow
-            ),
-          ],
+          boxShadow: shadows,
         ),
         padding: const EdgeInsets.all(4.0),
         child: Row(

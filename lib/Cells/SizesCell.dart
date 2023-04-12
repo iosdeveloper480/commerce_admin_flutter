@@ -38,7 +38,7 @@ class _SizesCellState extends State<SizesCell> {
         children: [
           Container(
             alignment: Alignment.topLeft,
-            padding: const EdgeInsets.all(8),
+            padding: const EdgeInsets.all(4),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,

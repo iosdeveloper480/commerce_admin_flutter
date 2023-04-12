@@ -2,7 +2,9 @@ import 'package:fatima_admin/Cells/ShopCell.dart';
 import 'package:fatima_admin/Components/WAButton.dart';
 import 'package:fatima_admin/Components/WACardView.dart';
 import 'package:fatima_admin/Components/WAIconButton.dart';
+import 'package:fatima_admin/Components/WANetworkImageView.dart';
 import 'package:fatima_admin/Components/WATagListView.dart';
+import 'package:fatima_admin/Components/WATitleSubtitleRow.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
 import 'package:fatima_admin/Helpers/WAConstants.dart';
 import 'package:fatima_admin/Models/CategoryModel.dart';
@@ -50,19 +52,23 @@ class _FeatureCellState extends State<FeatureCell> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                padding: const EdgeInsets.all(4),
+                // padding: const EdgeInsets.all(4),
                 child: Container(
                   clipBehavior: Clip.hardEdge,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
+                  decoration: const BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(4),
+                        bottomLeft: Radius.circular(4)),
                   ),
                   width: 90,
                   height: 110,
-                  child: FadeInImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(widget.category.img ?? ''),
-                    placeholder: const AssetImage('images/logo.png'),
-                  ),
+                  child:
+                      WANetworkImageView(imageUrl: widget.category.img ?? ''),
+                  // FadeInImage(
+                  //   fit: BoxFit.cover,
+                  //   image: NetworkImage(widget.category.img ?? ''),
+                  //   placeholder: const AssetImage('images/logo.png'),
+                  // ),
                 ),
               ),
               Expanded(

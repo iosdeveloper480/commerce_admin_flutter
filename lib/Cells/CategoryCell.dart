@@ -1,5 +1,6 @@
 import 'package:fatima_admin/Components/WAButton.dart';
 import 'package:fatima_admin/Components/WACardView.dart';
+import 'package:fatima_admin/Components/WANetworkImageView.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
 import 'package:fatima_admin/Helpers/WAConstants.dart';
 import 'package:fatima_admin/Models/CategoryModel.dart';
@@ -33,26 +34,32 @@ class _CategoryCellState extends State<CategoryCell> {
             mainAxisSize: MainAxisSize.min,
             children: [
               Container(
-                // padding: const EdgeInsets.all(4),
-                child: Container(
-                  clipBehavior: Clip.hardEdge,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(4),
-                  ),
-                  width: 90,
-                  height: 110,
-                  child: FadeInImage(
-                    fit: BoxFit.cover,
-                    image: NetworkImage(widget.category.img ?? ''),
-                    placeholder: const AssetImage('images/logo.png'),
-                  ),
+                clipBehavior: Clip.hardEdge,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topLeft: Radius.circular(4),
+                      bottomLeft: Radius.circular(4)),
                 ),
+                width: 90,
+                height: 110,
+                child: WANetworkImageView(
+                  imageUrl:
+                      widget.category.img == null ? '' : widget.category.img!,
+                  placeholderImageUrl: 'images/logo.png',
+                ),
+                // FadeInImage(
+                //   fit: BoxFit.cover,
+                //   placeholder: const AssetImage('images/logo.png'),
+                //   image: NetworkImage(widget.category.img == null
+                //       ? ''
+                //       : widget.category.img!),
+                // ),
               ),
               Expanded(
                 child: Container(
                   alignment: Alignment.topLeft,
                   // color: CustomColors.shadow,
-                  // padding: const EdgeInsets.all(8),
+                  padding: const EdgeInsets.all(8),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,

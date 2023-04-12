@@ -1,4 +1,5 @@
 import 'package:fatima_admin/Components/WAButton.dart';
+import 'package:fatima_admin/Components/WANetworkImageView.dart';
 import 'package:fatima_admin/Components/WATagListView.dart';
 import 'package:fatima_admin/Helpers/CustomColors.dart';
 import 'package:fatima_admin/Helpers/WAConstants.dart';
@@ -41,11 +42,12 @@ class _SizesChartCellState extends State<SizesChartCell> {
               ),
               width: 90,
               height: 110,
-              child: FadeInImage(
-                fit: BoxFit.cover,
-                image: NetworkImage(widget.sizeChart.img ?? ''),
-                placeholder: const AssetImage('images/logo.png'),
-              ),
+              child: WANetworkImageView(imageUrl: widget.sizeChart.img ?? ''),
+              // FadeInImage(
+              //   fit: BoxFit.cover,
+              //   image: NetworkImage(widget.sizeChart.img ?? ''),
+              //   placeholder: const AssetImage('images/logo.png'),
+              // ),
             ),
           ),
           Expanded(

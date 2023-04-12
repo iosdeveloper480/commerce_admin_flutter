@@ -28,45 +28,48 @@ class _BaseDrawerPageState extends State<BaseDrawerPage> {
       appBar: AppBar(
         title: widget.title,
         backgroundColor: Colors.white,
-        flexibleSpace: ClipRect(
-          child: BackdropFilter(
-            blendMode: BlendMode.src,
-            filter: ImageFilter.blur(
-              sigmaX: 100,
-              sigmaY: 100.0,
-              tileMode: TileMode.mirror,
-            ),
-            child: Container(
-              color: CustomColors.primary.withOpacity(0.1),
+        flexibleSpace: FlexibleSpaceBar(
+          background: ClipRect(
+            child: BackdropFilter(
+              blendMode: BlendMode.src,
+              filter: ImageFilter.blur(
+                sigmaX: 10,
+                sigmaY: 50,
+                tileMode: TileMode.mirror,
+              ),
+              child: Container(
+                color: CustomColors.primary.withOpacity(0.25),
+              ),
             ),
           ),
         ),
       ),
-      drawer: Expanded(
-        child: Drawer(
-          backgroundColor: CustomColors.purple,
-          child: Column(
-            children: [
-              const DrawerHeader(
+      drawer: Drawer(
+        backgroundColor: CustomColors.purple,
+        child: Column(
+          children: [
+            const SizedBox(
+              height: 200,
+              child: DrawerHeader(
                 decoration: BoxDecoration(
                     image: DecorationImage(
                         image: AssetImage("images/logo.png"),
                         fit: BoxFit.cover)),
                 child: Text("Header"),
               ),
-              Expanded(
-                child: ListView.builder(
-                  itemCount: leftMenuModelList.length,
-                  itemBuilder: (context, i) {
-                    return WAExpandableListView(
-                      leftMenuModel: leftMenuModelList[i],
-                      index: i,
-                    );
-                  },
-                ),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: leftMenuModelList.length,
+                itemBuilder: (context, i) {
+                  return WAExpandableListView(
+                    leftMenuModel: leftMenuModelList[i],
+                    index: i,
+                  );
+                },
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       body: SafeArea(
