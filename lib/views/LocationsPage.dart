@@ -57,7 +57,10 @@ class _LocationsPageState extends State<LocationsPage> {
     print(country.id);
   }
 
-  onPressed() {}
+  onPressed() {
+    print('object');
+  }
+
   @override
   Widget build(BuildContext context) {
     return BaseDrawerPage(

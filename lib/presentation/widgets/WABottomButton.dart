@@ -47,8 +47,6 @@ class _WABottomButtonState extends State<WABottomButton> {
             child: WAButton(
               title: widget.title,
               onPressed: widget.onPressed,
-              backgroundColor: CustomColors.primary,
-              textColor: CustomColors.black,
             ),
           ),
         ],

@@ -52,9 +52,9 @@ class _BaseDrawerPageState extends State<BaseDrawerPage> {
               height: 200,
               child: DrawerHeader(
                 decoration: BoxDecoration(
-                    image: DecorationImage(
-                        image: AssetImage("images/logo.png"),
-                        fit: BoxFit.cover)),
+                  image: DecorationImage(
+                      image: AssetImage("images/logo.png"), fit: BoxFit.cover),
+                ),
                 child: Text("Header"),
               ),
             ),

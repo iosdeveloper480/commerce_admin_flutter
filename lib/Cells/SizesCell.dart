@@ -84,8 +84,6 @@ class _SizesCellState extends State<SizesCell> {
                         onPressed: () {
                           widget.onTapEdit(widget.size);
                         },
-                        backgroundColor: CustomColors.primary,
-                        borderRadius: 5,
                       ),
                     ),
                     const VerticalDivider(
@@ -100,8 +98,6 @@ class _SizesCellState extends State<SizesCell> {
                         onPressed: () {
                           widget.onTapDelete(widget.size);
                         },
-                        backgroundColor: CustomColors.primary,
-                        borderRadius: 5,
                       ),
                     ),
                   ],

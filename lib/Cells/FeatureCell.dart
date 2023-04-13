@@ -126,8 +126,6 @@ class _FeatureCellState extends State<FeatureCell> {
                                   onPressed: () {
                                     widget.onTapEdit(widget.category);
                                   },
-                                  backgroundColor: CustomColors.primary,
-                                  borderRadius: 5,
                                 ),
                               ),
                               const VerticalDivider(
@@ -142,8 +140,6 @@ class _FeatureCellState extends State<FeatureCell> {
                                   onPressed: () {
                                     widget.onTapDelete(widget.category);
                                   },
-                                  backgroundColor: CustomColors.primary,
-                                  borderRadius: 5,
                                 ),
                               ),
                             ],

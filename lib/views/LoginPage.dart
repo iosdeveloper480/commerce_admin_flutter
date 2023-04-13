@@ -1,4 +1,5 @@
 import 'package:fatima_admin/Views/MyHomePage.dart';
+import 'package:fatima_admin/presentation/widgets/WAButton.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatelessWidget {
@@ -75,15 +76,16 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                MaterialButton(
+                Container(
                   height: 45,
-                  minWidth: double.infinity,
-                  textColor: Colors.white,
-                  onPressed: () {
-                    onPress(context);
-                  },
+                  width: double.infinity,
                   color: Colors.green,
-                  child: const Text('Login'),
+                  child: WAButton(
+                    title: 'Login',
+                    onPressed: () {
+                      onPress(context);
+                    },
+                  ),
                 ),
               ],
             ),

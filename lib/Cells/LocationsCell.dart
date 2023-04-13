@@ -88,8 +88,6 @@ class _LocationsCellState extends State<LocationsCell> {
                         onPressed: () {
                           widget.onTapEdit(widget.country);
                         },
-                        backgroundColor: CustomColors.primary,
-                        borderRadius: 5,
                       ),
                     ),
                     const VerticalDivider(
@@ -104,8 +102,6 @@ class _LocationsCellState extends State<LocationsCell> {
                         onPressed: () {
                           widget.onTapDelete(widget.country);
                         },
-                        backgroundColor: CustomColors.primary,
-                        borderRadius: 5,
                       ),
                     ),
                   ],

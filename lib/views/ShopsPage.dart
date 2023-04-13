@@ -2,10 +2,12 @@ import 'dart:convert';
 
 import 'package:fatima_admin/Cells/ShopCell.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
-import 'package:fatima_admin/Views/BaseDrawerPage.dart';
-import 'package:fatima_admin/Views/ShopEditPage.dart';
 import 'package:fatima_admin/domain/models/ShopModel.dart';
+import 'package:fatima_admin/domain/models/SliderModel.dart';
 import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/presentation/widgets/WAMapView.dart';
+import 'package:fatima_admin/views/BaseDrawerPage.dart';
+import 'package:fatima_admin/views/ShopEditPage.dart';
 import 'package:flutter/material.dart';
 
 class ShopsPage extends StatefulWidget {
@@ -17,6 +19,7 @@ class ShopsPage extends StatefulWidget {
 
 class _ShopsPageState extends State<ShopsPage> {
   late List<ShopModel> shopsList = [];
+  late List<SliderModel> slidersList = [];
   int selected = 0;
   String buttonTitle = 'Add Size';
 
@@ -24,6 +27,7 @@ class _ShopsPageState extends State<ShopsPage> {
   void initState() {
     super.initState();
     loadData('shops');
+    loadSliders('sliders');
   }
 
   loadData(String fileName) {
@@ -34,12 +38,39 @@ class _ShopsPageState extends State<ShopsPage> {
         });
   }
 
+  loadSliders(String fileName) {
+    JSONLoader().loadJsonData(fileName).then((value) => {
+          setState(() {
+            slidersList = SliderResponseModel.fromJson(json.decode(value)).data;
+          })
+        });
+  }
+
+  Iterable<SliderModel> getSliders(String shopId) {
+    return slidersList.where(
+      (element) => element.shopId == shopId && element.hide != '1',
+    );
+  }
+
   onPressedAddShop() {}
-  onPressedEditButton(ShopModel shopModel) {
+  onPressedLocation(ShopModel shopModel) {
     showModalBottomSheet(
         context: context,
         builder: (BuildContext context) {
-          return ShopEditPage();
+          return WAMapView();
+        });
+  }
+
+  onPressedEditButton(ShopModel shopModel) {
+    List<SliderModel> sliders = getSliders(shopModel.id).toList();
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return ShopEditPage(
+            shop: shopModel,
+            sliders: sliders.map((e) => e.img ?? '').toList(),
+            onPressedLocation: onPressedLocation,
+          );
         });
   }
 

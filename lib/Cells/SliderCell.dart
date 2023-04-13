@@ -90,8 +90,6 @@ class _SliderCellState extends State<SliderCell> {
                         onPressed: () {
                           widget.onTapEdit(widget.slider);
                         },
-                        backgroundColor: CustomColors.primary,
-                        borderRadius: 5,
                       ),
                     ),
                     const VerticalDivider(
@@ -106,8 +104,6 @@ class _SliderCellState extends State<SliderCell> {
                         onPressed: () {
                           widget.onTapDelete(widget.slider);
                         },
-                        backgroundColor: CustomColors.primary,
-                        borderRadius: 5,
                       ),
                     ),
                   ],

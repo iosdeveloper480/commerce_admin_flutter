@@ -1,4 +1,3 @@
-import 'package:fatima_admin/config/CustomColors.dart';
 import 'package:fatima_admin/domain/models/CategoryModel.dart';
 import 'package:fatima_admin/presentation/widgets/WAButton.dart';
 import 'package:fatima_admin/presentation/widgets/WACardView.dart';
@@ -92,8 +91,6 @@ class _CategoryCellState extends State<CategoryCell> {
                               onPressed: () {
                                 widget.onTapEdit(widget.category);
                               },
-                              backgroundColor: CustomColors.primary,
-                              borderRadius: 5,
                             ),
                           ),
                           const VerticalDivider(
@@ -108,8 +105,6 @@ class _CategoryCellState extends State<CategoryCell> {
                               onPressed: () {
                                 widget.onTapDelete(widget.category);
                               },
-                              backgroundColor: CustomColors.primary,
-                              borderRadius: 5,
                             ),
                           ),
                         ],
