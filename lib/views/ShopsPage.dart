@@ -4,6 +4,7 @@ import 'package:fatima_admin/Cells/ShopCell.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
 import 'package:fatima_admin/domain/models/ShopModel.dart';
 import 'package:fatima_admin/domain/models/SliderModel.dart';
+import 'package:fatima_admin/presentation/pages/ShopUpdatePage.dart';
 import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
 import 'package:fatima_admin/presentation/widgets/WAMapView.dart';
 import 'package:fatima_admin/views/BaseDrawerPage.dart';
@@ -55,9 +56,24 @@ class _ShopsPageState extends State<ShopsPage> {
   onPressedAddShop() {}
   onPressedLocation(ShopModel shopModel) {
     showModalBottomSheet(
+        isScrollControlled: true,
+        useRootNavigator: false,
+        enableDrag: false,
+        useSafeArea: false,
         context: context,
         builder: (BuildContext context) {
-          return WAMapView();
+          return const FractionallySizedBox(
+            heightFactor: 0.9,
+            child: WAMapView(),
+          );
+        });
+  }
+
+  onPressedUpdateButton(ShopModel shopModel) {
+    showModalBottomSheet(
+        context: context,
+        builder: (BuildContext context) {
+          return ShopUpdatePage();
         });
   }
 
@@ -70,6 +86,7 @@ class _ShopsPageState extends State<ShopsPage> {
             shop: shopModel,
             sliders: sliders.map((e) => e.img ?? '').toList(),
             onPressedLocation: onPressedLocation,
+            onPressedUpdate: onPressedUpdateButton,
           );
         });
   }

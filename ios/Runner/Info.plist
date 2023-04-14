@@ -2,8 +2,12 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-<key>io.flutter.embedded_views_preview</key>
-<string>YES</string>
+    <key>MBXAccessToken</key>
+    <string>sk.eyJ1IjoiZmF0aW1hYXBwIiwiYSI6ImNsZmY1Ym8wbzQxNWkzdnIwYng0bGd1YnQifQ.UZ05F6nedMFKR9Eg1ps-aw</string>
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>[Your explanation here]</string>
+    <key>io.flutter.embedded_views_preview</key>
+    <string>YES</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDisplayName</key>

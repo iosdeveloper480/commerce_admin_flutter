@@ -33,6 +33,6 @@ SPEC CHECKSUMS:
   MapboxAnnotationExtension: 4eee6c26349ef6d909f1a23a7eae2d0f7ca5fa7d
   MapboxMobileEvents: 5a172cc9bbf8ac0e45ba86095cbee685ede248cc
 
-PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
+PODFILE CHECKSUM: df5dba16af06207be9ca3460366b0fd6a302532d
 
 COCOAPODS: 1.11.3
