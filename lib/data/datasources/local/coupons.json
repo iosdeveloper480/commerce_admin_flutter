@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "data": [
+    {"id":"1","code":"111","name":"new","name_ar":"new","type":"1","value":"50","date":"2023-03-29","used":"16","max":"100","cap":"10","status":"1","expiry":"2023-05-01","created_by":"1","hide":"0"},
+    {"id":"2","code":"222","name":"new","name_ar":"new","type":"2","value":"150","date":"2023-01-16","used":"1","max":"100","cap":"100","status":"1","expiry":"2023-11-03","created_by":"1","hide":"0"},
+    {"id":"3","code":"333","name":"Free","name_ar":"Free","type":"3","value":"0","date":"2023-01-16","used":"4","max":"100","cap":"0","status":"1","expiry":"2023-11-23","created_by":"1","hide":"0"}
+  ]
+}

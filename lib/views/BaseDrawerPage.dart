@@ -65,6 +65,9 @@ class _BaseDrawerPageState extends State<BaseDrawerPage> {
                   return WAExpandableListView(
                     leftMenuModel: leftMenuModelList[i],
                     index: i,
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
                   );
                 },
               ),

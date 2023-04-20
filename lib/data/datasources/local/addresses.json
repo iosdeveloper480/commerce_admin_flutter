@@ -1,0 +1,8 @@
+{
+  "success": true,
+  "data": [
+    {"id":"1","user_id":"Za33WHwWn0fRuHGmolVqI7KxRtG3","name":"Office","details":"Port City Java","country":"ae","city":"Abu Dhabi","flat":"402","phone":"971586745257","latitude":"24.466993","longitude":"54.384375","hide":"0"},
+    {"id":"2","user_id":"Za33WHwWn0fRuHGmolVqI7KxRtG3","name":"Office ","details":"Port City Java, Al Nahyan Camp","country":"ae","city":"Abu Dhabi","flat":"100","phone":"+971586745257","latitude":"24.4671365","longitude":"54.3845912","hide":"0"},
+    {"id":"3","user_id":"stUykVEFSahTIDAsRViLXiqXnmR2","name":"Ujh","details":"Port City Java","country":"ae","city":"Abu Dhabi","flat":"777","phone":"971527188709","latitude":"24.466993","longitude":"54.384375","hide":"1"}
+  ]
+}

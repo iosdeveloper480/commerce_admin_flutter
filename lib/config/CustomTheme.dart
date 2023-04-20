@@ -4,6 +4,13 @@ import 'package:flutter/material.dart';
 class CustomTheme {
   static ThemeData get lightTheme {
     return ThemeData(
+      appBarTheme: const AppBarTheme(
+        // color: Colors.transparent,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
+        scrolledUnderElevation: 0,
+        centerTitle: true,
+      ),
       canvasColor: CustomColors.white,
       primarySwatch: CustomColors.getMaterialColor(CustomColors.primary),
       primaryColor: CustomColors.purple,
@@ -16,7 +23,7 @@ class CustomTheme {
         shadowColor: CustomColors.darkGrey,
         surfaceTintColor: CustomColors.black,
         elevation: 3,
-        margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
         ),
@@ -52,7 +59,7 @@ class CustomTheme {
         shadowColor: CustomColors.white,
         surfaceTintColor: CustomColors.black,
         elevation: 3,
-        margin: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
+        margin: const EdgeInsets.symmetric(vertical: 5, horizontal: 10),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(4),
         ),

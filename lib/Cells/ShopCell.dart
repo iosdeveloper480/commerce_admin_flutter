@@ -49,14 +49,7 @@ class _ShopCellState extends State<ShopCell> {
                 SizedBox(
                   width: double.infinity,
                   child: WANetworkImageView(imageUrl: widget.shop.img ?? ''),
-                  // WANetworkImageView(
-                  //     imageUrl:
-                  //         'http://172.20.30.149/fatima/admin/shops/images/1.png?t=1680067932'),
                 ),
-                // const WAImageView(
-                //     size: Size(double.infinity, 150),
-                //     link:
-                //         'http://172.20.30.149/fatima/admin/shops/images/1.png?t=1680067932'),
                 Container(
                   color: Colors.transparent,
                   width: 35,
@@ -86,14 +79,20 @@ class _ShopCellState extends State<ShopCell> {
               children: [
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    WATitleSubtitleRow(
-                      title: 'Name:- ',
-                      subtitle: widget.shop.name,
+                    Expanded(
+                      flex: 3,
+                      child: WATitleSubtitleRow(
+                        title: 'Name:- ',
+                        subtitle: widget.shop.name,
+                      ),
                     ),
-                    WATitleSubtitleRow(
-                      title: 'Open:- ',
-                      subtitle: widget.shop.close == '1' ? 'No' : 'Yes',
+                    Expanded(
+                      child: WATitleSubtitleRow(
+                        title: 'Open:- ',
+                        subtitle: widget.shop.close == '1' ? 'No' : 'Yes',
+                      ),
                     ),
                   ],
                 ),
@@ -106,13 +105,13 @@ class _ShopCellState extends State<ShopCell> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Expanded(
+                      flex: 1,
                       child: WATitleSubtitleRow(
                         title: 'Email:- ',
                         subtitle: widget.shop.email,
                       ),
                     ),
                     Expanded(
-                      flex: 0,
                       child: WATitleSubtitleRow(
                         title: 'Phone:- ',
                         subtitle: widget.shop.phone,
@@ -127,13 +126,18 @@ class _ShopCellState extends State<ShopCell> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    WATitleSubtitleRow(
-                      title: 'City:- ',
-                      subtitle: widget.shop.city,
+                    Expanded(
+                      flex: 3,
+                      child: WATitleSubtitleRow(
+                        title: 'City:- ',
+                        subtitle: widget.shop.city,
+                      ),
                     ),
-                    WATitleSubtitleRow(
-                      title: 'Country:- ',
-                      subtitle: widget.shop.country,
+                    Expanded(
+                      child: WATitleSubtitleRow(
+                        title: 'Country:- ',
+                        subtitle: widget.shop.country,
+                      ),
                     ),
                   ],
                 ),

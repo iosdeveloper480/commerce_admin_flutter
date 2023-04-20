@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
       title: 'Fatima Admin',
       theme: CustomTheme.lightTheme,
       home: const LoginPage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

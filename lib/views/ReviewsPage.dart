@@ -1,4 +1,11 @@
+import 'dart:convert';
+
+import 'package:fatima_admin/Cells/ReviewCell.dart';
+import 'package:fatima_admin/Helpers/JSONLoader.dart';
 import 'package:fatima_admin/Views/BaseDrawerPage.dart';
+import 'package:fatima_admin/domain/models/ReviewModel.dart';
+import 'package:fatima_admin/presentation/widgets/WAListFutureBuilder.dart';
+import 'package:fatima_admin/presentation/widgets/WAListView.dart';
 import 'package:flutter/material.dart';
 
 class ReviewsPage extends StatefulWidget {
@@ -9,11 +16,53 @@ class ReviewsPage extends StatefulWidget {
 }
 
 class _ReviewsPageState extends State<ReviewsPage> {
+  late List<NotificationModel> reviewsList = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadData('reviews');
+  }
+
+  loadData(String fileName) {
+    JSONLoader().loadJsonData(fileName).then(
+          (value) => {
+            setState(
+              () {
+                reviewsList =
+                    ReviewResponseModel.fromJson(json.decode(value)).data;
+              },
+            )
+          },
+        );
+  }
+
+  Future<List<NotificationModel>> getData() async {
+    await Future.delayed(const Duration(seconds: 2));
+    var data = await JSONLoader().loadJsonData('reviews');
+    var list = ReviewResponseModel.fromJson(json.decode(data)).data;
+    return list;
+  }
+
+  onPressedDeleteButton(NotificationModel appDataModel) {}
+
   @override
   Widget build(BuildContext context) {
     return BaseDrawerPage(
-      title: Text('Reviews'),
-      body: Text('Reviews Page'),
+      title: const Text('Reviews'),
+      body: WAListFutureBuilder<List<NotificationModel>>(
+          future: getData(),
+          builder: (context1, snapshot) {
+            return WAListView(
+              itemCount: reviewsList.length,
+              itemBuilder: (BuildContext context, int index) {
+                return ReviewCell(
+                  reviewModel: reviewsList[index],
+                  onPressedDeleteButton: onPressedDeleteButton,
+                );
+              },
+            );
+          }),
     );
   }
 }

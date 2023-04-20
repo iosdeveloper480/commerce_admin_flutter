@@ -4,8 +4,10 @@ import 'package:fatima_admin/Cells/ShopCell.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
 import 'package:fatima_admin/domain/models/ShopModel.dart';
 import 'package:fatima_admin/domain/models/SliderModel.dart';
+import 'package:fatima_admin/presentation/pages/ShopEditShopPage.dart';
 import 'package:fatima_admin/presentation/pages/ShopUpdatePage.dart';
 import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/presentation/widgets/WAListView.dart';
 import 'package:fatima_admin/presentation/widgets/WAMapView.dart';
 import 'package:fatima_admin/views/BaseDrawerPage.dart';
 import 'package:fatima_admin/views/ShopEditPage.dart';
@@ -77,6 +79,18 @@ class _ShopsPageState extends State<ShopsPage> {
         });
   }
 
+  onPressedEditShopButton(ShopModel shopModel) {
+    showModalBottomSheet(
+        shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(10.0))),
+        backgroundColor: Colors.white,
+        isScrollControlled: true,
+        context: context,
+        builder: (BuildContext context) {
+          return ShopEditShopPage();
+        });
+  }
+
   onPressedEditButton(ShopModel shopModel) {
     List<SliderModel> sliders = getSliders(shopModel.id).toList();
     showModalBottomSheet(
@@ -87,6 +101,7 @@ class _ShopsPageState extends State<ShopsPage> {
             sliders: sliders.map((e) => e.img ?? '').toList(),
             onPressedLocation: onPressedLocation,
             onPressedUpdate: onPressedUpdateButton,
+            onPressedEdit: onPressedEditShopButton,
           );
         });
   }
@@ -99,16 +114,14 @@ class _ShopsPageState extends State<ShopsPage> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            child: ListView.builder(
-              itemCount: shopsList.length,
-              itemBuilder: (BuildContext context, int index) {
-                return ShopCell(
-                  shop: shopsList[index],
-                  onPressedEditButton: onPressedEditButton,
-                );
-              },
-            ),
+          WAListView(
+            itemCount: shopsList.length,
+            itemBuilder: (BuildContext context, int index) {
+              return ShopCell(
+                shop: shopsList[index],
+                onPressedEditButton: onPressedEditButton,
+              );
+            },
           ),
           WABottomButton(
             title: 'Add Shop',

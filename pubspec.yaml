@@ -24,6 +24,7 @@ flutter:
      - images/logo.png
      - images/diamond.png
      - lib/data/datasources/local/
+     - assets/mapbox_access_token.txt
    uses-material-design: true
 
   # An image asset can refer to one or more resolution-specific "variants", see

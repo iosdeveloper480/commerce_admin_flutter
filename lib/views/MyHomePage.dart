@@ -10,10 +10,15 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   @override
+  void dispose() {
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return BaseDrawerPage(
-      title: Text('Home'),
-      body: Text('Home Page'),
+      title: const Text('Home'),
+      body: const Text('Home Page'),
     );
   }
 }

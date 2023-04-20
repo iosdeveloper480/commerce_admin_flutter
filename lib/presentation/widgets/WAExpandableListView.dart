@@ -37,20 +37,25 @@ import 'package:fatima_admin/Views/SizeChartPage.dart';
 import 'package:fatima_admin/Views/SizesPage.dart';
 import 'package:fatima_admin/Views/SlidersPage.dart';
 import 'package:fatima_admin/Views/UsersPage.dart';
+import 'package:fatima_admin/utils/WAConstants.dart';
 import 'package:flutter/material.dart';
 
 class WAExpandableListView extends StatefulWidget {
-  const WAExpandableListView(
-      {Key? key, required this.leftMenuModel, required this.index})
-      : super(key: key);
+  const WAExpandableListView({
+    Key? key,
+    required this.leftMenuModel,
+    required this.index,
+    required this.onTap,
+  }) : super(key: key);
   final LeftMenuModel leftMenuModel;
   final int index;
+  final Fallback0Param onTap;
   @override
   State<WAExpandableListView> createState() => _WAExpandableListViewState();
 }
 
 class _WAExpandableListViewState extends State<WAExpandableListView> {
-  DrawerHeader drawerHeader = DrawerHeader(
+  DrawerHeader drawerHeader = const DrawerHeader(
     decoration: BoxDecoration(
       color: Colors.blue,
     ),
@@ -291,6 +296,7 @@ class _WAExpandableListViewState extends State<WAExpandableListView> {
           // height: 35,
           child: ListTile(
             onTap: () {
+              widget.onTap();
               onTap2(content);
             },
             title: SizedBox(
