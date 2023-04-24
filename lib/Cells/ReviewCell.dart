@@ -3,7 +3,7 @@ import 'package:fatima_admin/domain/models/ReviewModel.dart';
 import 'package:fatima_admin/presentation/widgets/WAButton.dart';
 import 'package:fatima_admin/presentation/widgets/WACardView.dart';
 import 'package:fatima_admin/presentation/widgets/WATitleSubtitleRow.dart';
-import 'package:fatima_admin/utils/WAConstants.dart';
+import 'package:fatima_admin/utils/Callback.dart';
 import 'package:flutter/material.dart';
 
 class ReviewCell extends StatefulWidget {

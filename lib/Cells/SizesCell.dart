@@ -1,9 +1,8 @@
-import 'package:fatima_admin/config/CustomColors.dart';
 import 'package:fatima_admin/domain/models/SizesModel.dart';
 import 'package:fatima_admin/presentation/widgets/WAButton.dart';
 import 'package:fatima_admin/presentation/widgets/WACardView.dart';
 import 'package:fatima_admin/presentation/widgets/WATagListView.dart';
-import 'package:fatima_admin/utils/WAConstants.dart';
+import 'package:fatima_admin/utils/Callback.dart';
 import 'package:flutter/material.dart';
 
 class SizesCell extends StatefulWidget {
@@ -34,6 +33,7 @@ class _SizesCellState extends State<SizesCell> {
   @override
   Widget build(BuildContext context) {
     return WACardView(
+      innerMargin: const EdgeInsets.all(8),
       body: Column(
         children: [
           Container(

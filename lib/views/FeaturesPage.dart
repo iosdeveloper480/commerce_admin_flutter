@@ -5,6 +5,8 @@ import 'package:fatima_admin/Helpers/JSONLoader.dart';
 import 'package:fatima_admin/Views/BaseDrawerPage.dart';
 import 'package:fatima_admin/domain/Models/CategoryModel.dart';
 import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/presentation/widgets/WAListFutureBuilder.dart';
+import 'package:fatima_admin/presentation/widgets/WAListView.dart';
 import 'package:fatima_admin/presentation/widgets/WASegmentedControl.dart';
 import 'package:flutter/material.dart';
 
@@ -17,32 +19,26 @@ class FeaturesPage extends StatefulWidget {
 }
 
 class _FeaturesPageState extends State<FeaturesPage> {
-  late List<CategoryModel> categories = [];
   bool isFeatured = true;
   String buttonTitle = 'Add Feature';
   @override
   void initState() {
     super.initState();
-    loadData('categories');
   }
 
-  loadData(String fileName) {
-    JSONLoader().loadJsonData(fileName).then((value) => {
-          setState(() {
-            categories =
-                CategoryResponseModel.fromJson(json.decode(value)).data;
-          })
-        });
+  Future<List<CategoryModel>> getData(String fileName) async {
+    await Future.delayed(const Duration(seconds: 1));
+    var data = await JSONLoader().loadJsonData(fileName);
+    var list = CategoryResponseModel.fromJson(json.decode(data)).data;
+    return list;
   }
 
   onCatSelected(int selected) {
     setState(() {
       if (selected == 0) {
-        loadData('categories');
         isFeatured = true;
         buttonTitle = 'Add Feature';
       } else {
-        loadData('sub_categories');
         isFeatured = false;
         buttonTitle = 'Add Feature Option';
       }
@@ -73,25 +69,18 @@ class _FeaturesPageState extends State<FeaturesPage> {
             ],
           ),
           Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Expanded(
-                  child: ListView.builder(
-                    itemCount: categories.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      //Row Container
-                      return FeatureCell(
-                        category: categories[index],
-                        isFeatured: isFeatured,
-                        onTapEdit: onTapEdit,
-                        onTapDelete: onTapDelete,
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
+            child: WAListFutureBuilder<List<CategoryModel>>(
+                future: isFeatured
+                    ? getData('categories')
+                    : getData('sub_categories'),
+                itemBuilder: (context1, snapshot, item) {
+                  return FeatureCell(
+                    category: item as CategoryModel,
+                    isFeatured: isFeatured,
+                    onTapEdit: onTapEdit,
+                    onTapDelete: onTapDelete,
+                  );
+                }),
           ),
           WABottomButton(
             title: buttonTitle,

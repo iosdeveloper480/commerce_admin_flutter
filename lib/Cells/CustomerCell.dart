@@ -2,7 +2,7 @@ import 'package:fatima_admin/domain/models/CustomerModel.dart';
 import 'package:fatima_admin/presentation/widgets/WACardView.dart';
 import 'package:fatima_admin/presentation/widgets/WANetworkImageView.dart';
 import 'package:fatima_admin/presentation/widgets/WATitleSubtitleRow.dart';
-import 'package:fatima_admin/utils/WAConstants.dart';
+import 'package:fatima_admin/utils/Callback.dart';
 
 import 'package:flutter/material.dart';
 

@@ -21,7 +21,7 @@ class _OrderCellState extends State<OrderCell> {
   @override
   Widget build(BuildContext context) {
     return WACardView(
-      innerMargin: const EdgeInsets.all(8),
+      innerMargin: const EdgeInsets.only(top: 8, right: 8, left: 8, bottom: 4),
       body: Column(
         children: [
           WATitleSubtitleRow(

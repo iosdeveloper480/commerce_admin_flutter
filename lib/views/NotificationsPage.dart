@@ -37,30 +37,26 @@ class _NotificationsPageState extends State<NotificationsPage> {
   Widget build(BuildContext context) {
     return BaseDrawerPage(
       title: const Text('Notifications'),
-      body: WAListFutureBuilder<List<NotificationModel>>(
-        errorMessage: 'No Notification available',
-        future: getData(),
-        builder: (context1, snapshot) {
-          var data = snapshot.data as List<NotificationModel>;
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              WAListView(
-                itemCount: data.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return NotificationsCell(
-                    notificationModel: data[index],
-                  );
-                },
-              ),
-              WABottomButton(
-                title: 'Add Notification',
-                onPressed: onPressedAddNotification,
-              ),
-            ],
-          );
-        },
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            child: WAListFutureBuilder<List<NotificationModel>>(
+              errorMessage: 'No Notification available',
+              future: getData(),
+              itemBuilder: (context1, snapshot, item) {
+                return NotificationsCell(
+                  notificationModel: item as NotificationModel,
+                );
+              },
+            ),
+          ),
+          WABottomButton(
+            title: 'Add Notification',
+            onPressed: onPressedAddNotification,
+          ),
+        ],
       ),
     );
   }

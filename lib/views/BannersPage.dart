@@ -4,6 +4,7 @@ import 'package:fatima_admin/Cells/SliderCell.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
 import 'package:fatima_admin/domain/models/SliderModel.dart';
 import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/presentation/widgets/WAListFutureBuilder.dart';
 import 'package:fatima_admin/views/BaseDrawerPage.dart';
 import 'package:fatima_admin/views/ImageViewPage.dart';
 import 'package:flutter/material.dart';
@@ -16,22 +17,18 @@ class BannersPage extends StatefulWidget {
 }
 
 class _BannersPageState extends State<BannersPage> {
-  late List<SliderModel> slidersList = [];
   String buttonTitle = 'Add Banner';
 
   @override
   void initState() {
     super.initState();
-    loadData('sliders');
   }
 
-  loadData(String fileName) {
-    JSONLoader().loadJsonData(fileName).then((value) => {
-          setState(() {
-            slidersList =
-                SliderResponseModel.fromJson2(json.decode(value)).data;
-          })
-        });
+  Future<List<SliderModel>> getData() async {
+    await Future.delayed(const Duration(seconds: 1));
+    var data = await JSONLoader().loadJsonData('banners');
+    var list = SliderResponseModel.fromJson(json.decode(data)).data;
+    return list;
   }
 
   onTapEdit(SliderModel slider) {
@@ -61,11 +58,11 @@ class _BannersPageState extends State<BannersPage> {
       body: Column(
         children: [
           Expanded(
-            child: ListView.builder(
-              itemCount: slidersList.length,
-              itemBuilder: (BuildContext context, int index) {
+            child: WAListFutureBuilder<List<SliderModel>>(
+              future: getData(),
+              itemBuilder: (BuildContext context, int index, item) {
                 return SliderCell(
-                  slider: slidersList[index],
+                  slider: item as SliderModel,
                   onTapEdit: onTapEdit,
                   onTapDelete: onTapDelete,
                   onTapImage: onTapImage,

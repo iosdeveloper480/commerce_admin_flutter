@@ -7,6 +7,7 @@ import 'package:fatima_admin/domain/models/SliderModel.dart';
 import 'package:fatima_admin/presentation/pages/ShopEditShopPage.dart';
 import 'package:fatima_admin/presentation/pages/ShopUpdatePage.dart';
 import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/presentation/widgets/WAListFutureBuilder.dart';
 import 'package:fatima_admin/presentation/widgets/WAListView.dart';
 import 'package:fatima_admin/presentation/widgets/WAMapView.dart';
 import 'package:fatima_admin/views/BaseDrawerPage.dart';
@@ -29,16 +30,24 @@ class _ShopsPageState extends State<ShopsPage> {
   @override
   void initState() {
     super.initState();
-    loadData('shops');
+    // loadData('shops');
     loadSliders('sliders');
   }
 
-  loadData(String fileName) {
-    JSONLoader().loadJsonData(fileName).then((value) => {
-          setState(() {
-            shopsList = ShopsResponseModel.fromJson(json.decode(value)).data;
-          })
-        });
+  // loadData(String fileName) {
+  //   JSONLoader().loadJsonData(fileName).then((value) => {
+  //         setState(() {
+  //           shopsList = ShopsResponseModel.fromJson(json.decode(value)).data;
+  //         })
+  //       });
+  // }
+
+  Future<List<ShopModel>> getData(String fileName) async {
+    await Future.delayed(const Duration(seconds: 1));
+    var data = await JSONLoader().loadJsonData(fileName);
+    var list = ShopsResponseModel.fromJson(json.decode(data)).data;
+    shopsList = list;
+    return list;
   }
 
   loadSliders(String fileName) {
@@ -114,14 +123,16 @@ class _ShopsPageState extends State<ShopsPage> {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          WAListView(
-            itemCount: shopsList.length,
-            itemBuilder: (BuildContext context, int index) {
-              return ShopCell(
-                shop: shopsList[index],
-                onPressedEditButton: onPressedEditButton,
-              );
-            },
+          Expanded(
+            child: WAListFutureBuilder<List<ShopModel>>(
+              future: getData('shops'),
+              itemBuilder: (context1, snapshot, item) {
+                return ShopCell(
+                  shop: item as ShopModel,
+                  onPressedEditButton: onPressedEditButton,
+                );
+              },
+            ),
           ),
           WABottomButton(
             title: 'Add Shop',

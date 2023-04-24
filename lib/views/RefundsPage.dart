@@ -39,22 +39,10 @@ class _RefundsPageState extends State<RefundsPage> {
       body: WAListFutureBuilder<List<RefundModel>>(
         errorMessage: 'No Refund available',
         future: getData(),
-        builder: (context1, snapshot) {
-          var data = snapshot.data as List<RefundModel>;
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              WAListView(
-                itemCount: data.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return RefundCell(
-                    dataModel: data[index],
-                    onPressStatusButton: onPressStatusButton,
-                  );
-                },
-              ),
-            ],
+        itemBuilder: (context1, snapshot, item) {
+          return RefundCell(
+            dataModel: item as RefundModel,
+            onPressStatusButton: onPressStatusButton,
           );
         },
       ),

@@ -5,6 +5,8 @@ import 'package:fatima_admin/Cells/SizesChartCell.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
 import 'package:fatima_admin/domain/models/SizesModel.dart';
 import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/presentation/widgets/WAListFutureBuilder.dart';
+import 'package:fatima_admin/presentation/widgets/WAListView.dart';
 import 'package:fatima_admin/presentation/widgets/WASegmentedControl.dart';
 import 'package:fatima_admin/views/BaseDrawerPage.dart';
 import 'package:flutter/material.dart';
@@ -25,15 +27,14 @@ class _SizesPageState extends State<SizesPage> {
   @override
   void initState() {
     super.initState();
-    loadData('sizes');
   }
 
-  loadData(String fileName) {
-    JSONLoader().loadJsonData(fileName).then((value) => {
-          setState(() {
-            sizesList = SizesResponseModel.fromJson(json.decode(value)).data;
-          })
-        });
+  Future<List<SizesModel>> getData(String fileName) async {
+    await Future.delayed(const Duration(seconds: 1));
+    var data = await JSONLoader().loadJsonData(fileName);
+    var list = SizesResponseModel.fromJson(json.decode(data)).data;
+    sizesList = list;
+    return list;
   }
 
   onButtonSelected(int selected) {
@@ -41,13 +42,10 @@ class _SizesPageState extends State<SizesPage> {
       this.selected = selected;
       if (selected == 0) {
         buttonTitle = 'Add Size';
-        loadData('sizes');
       } else if (selected == 1) {
         buttonTitle = 'Add Size Chart';
-        loadData('sizes_chart');
       } else {
         buttonTitle = 'Add Measurement';
-        loadData('measurements');
       }
     });
   }
@@ -82,26 +80,29 @@ class _SizesPageState extends State<SizesPage> {
                   ],
                 ),
                 Expanded(
-                  child: ListView.builder(
-                    itemCount: sizesList.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      if (selected == 1) {
-                        //Row Container
-                        return SizesChartCell(
-                          sizeChart: sizesList[index],
-                          onTapEdit: onTapEdit,
-                          onTapDelete: onTapDelete,
-                        );
-                      } else {
-                        //Row Container
-                        return SizesCell(
-                          size: sizesList[index],
-                          onTapEdit: onTapEdit,
-                          onTapDelete: onTapDelete,
-                        );
-                      }
-                    },
-                  ),
+                  child: WAListFutureBuilder<List<SizesModel>>(
+                      future: selected == 0
+                          ? getData('sizes')
+                          : (selected == 1
+                              ? getData('sizes_chart')
+                              : getData('measurements')),
+                      itemBuilder: (context1, snapshot, item) {
+                        if (selected == 1) {
+                          //Row Container
+                          return SizesChartCell(
+                            sizeChart: item as SizesModel,
+                            onTapEdit: onTapEdit,
+                            onTapDelete: onTapDelete,
+                          );
+                        } else {
+                          //Row Container
+                          return SizesCell(
+                            size: item as SizesModel,
+                            onTapEdit: onTapEdit,
+                            onTapDelete: onTapDelete,
+                          );
+                        }
+                      }),
                 ),
               ],
             ),

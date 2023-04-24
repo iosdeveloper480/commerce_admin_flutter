@@ -21,20 +21,6 @@ class _ReviewsPageState extends State<ReviewsPage> {
   @override
   void initState() {
     super.initState();
-    loadData('reviews');
-  }
-
-  loadData(String fileName) {
-    JSONLoader().loadJsonData(fileName).then(
-          (value) => {
-            setState(
-              () {
-                reviewsList =
-                    ReviewResponseModel.fromJson(json.decode(value)).data;
-              },
-            )
-          },
-        );
   }
 
   Future<List<NotificationModel>> getData() async {
@@ -52,15 +38,10 @@ class _ReviewsPageState extends State<ReviewsPage> {
       title: const Text('Reviews'),
       body: WAListFutureBuilder<List<NotificationModel>>(
           future: getData(),
-          builder: (context1, snapshot) {
-            return WAListView(
-              itemCount: reviewsList.length,
-              itemBuilder: (BuildContext context, int index) {
-                return ReviewCell(
-                  reviewModel: reviewsList[index],
-                  onPressedDeleteButton: onPressedDeleteButton,
-                );
-              },
+          itemBuilder: (context1, snapshot, item) {
+            return ReviewCell(
+              reviewModel: item as NotificationModel,
+              onPressedDeleteButton: onPressedDeleteButton,
             );
           }),
     );

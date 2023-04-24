@@ -37,21 +37,9 @@ class _AddressesPageState extends State<AddressesPage> {
       body: WAListFutureBuilder<List<AddressModel>>(
         errorMessage: 'No Notification available',
         future: getData(),
-        builder: (context1, snapshot) {
-          var data = snapshot.data as List<AddressModel>;
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              WAListView(
-                itemCount: data.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return AddressCell(
-                    dataModel: data[index],
-                  );
-                },
-              ),
-            ],
+        itemBuilder: (context1, snapshot, item) {
+          return AddressCell(
+            dataModel: item as AddressModel,
           );
         },
       ),

@@ -2,7 +2,7 @@ import 'package:fatima_admin/config/CustomColors.dart';
 import 'package:fatima_admin/domain/models/ShopModel.dart';
 import 'package:fatima_admin/domain/models/SliderModel.dart';
 import 'package:fatima_admin/presentation/widgets/WANetworkImageView.dart';
-import 'package:fatima_admin/utils/WAConstants.dart';
+import 'package:fatima_admin/utils/Callback.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 

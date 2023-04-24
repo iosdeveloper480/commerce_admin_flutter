@@ -4,6 +4,7 @@ import 'package:fatima_admin/Cells/SliderCell.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
 import 'package:fatima_admin/domain/models/SliderModel.dart';
 import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/presentation/widgets/WAListFutureBuilder.dart';
 import 'package:fatima_admin/views/BaseDrawerPage.dart';
 import 'package:fatima_admin/views/ImageViewPage.dart';
 import 'package:flutter/material.dart';
@@ -16,21 +17,18 @@ class SlidersPage extends StatefulWidget {
 }
 
 class _SlidersPageState extends State<SlidersPage> {
-  late List<SliderModel> slidersList = [];
   String buttonTitle = 'Add Slider';
 
   @override
   void initState() {
     super.initState();
-    loadData('sliders');
   }
 
-  loadData(String fileName) {
-    JSONLoader().loadJsonData(fileName).then((value) => {
-          setState(() {
-            slidersList = SliderResponseModel.fromJson(json.decode(value)).data;
-          })
-        });
+  Future<List<SliderModel>> getData() async {
+    await Future.delayed(const Duration(seconds: 1));
+    var data = await JSONLoader().loadJsonData('sliders');
+    var list = SliderResponseModel.fromJson(json.decode(data)).data;
+    return list;
   }
 
   onTapEdit(SliderModel slider) {
@@ -56,15 +54,15 @@ class _SlidersPageState extends State<SlidersPage> {
   @override
   Widget build(BuildContext context) {
     return BaseDrawerPage(
-      title: Text('Sliders'),
+      title: const Text('Sliders'),
       body: Column(
         children: [
           Expanded(
-            child: ListView.builder(
-              itemCount: slidersList.length,
-              itemBuilder: (BuildContext context, int index) {
+            child: WAListFutureBuilder<List<SliderModel>>(
+              future: getData(),
+              itemBuilder: (BuildContext context, int index, item) {
                 return SliderCell(
-                  slider: slidersList[index],
+                  slider: item as SliderModel,
                   onTapEdit: onTapEdit,
                   onTapDelete: onTapDelete,
                   onTapImage: onTapImage,

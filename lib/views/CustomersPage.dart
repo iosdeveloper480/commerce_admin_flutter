@@ -41,23 +41,11 @@ class _CustomersPageState extends State<CustomersPage> {
       body: WAListFutureBuilder<List<CustomerModel>>(
         errorMessage: 'No Notification available',
         future: getData(),
-        builder: (context1, snapshot) {
-          var data = snapshot.data as List<CustomerModel>;
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              WAListView(
-                itemCount: data.length,
-                itemBuilder: (BuildContext context, int index) {
-                  return CustomerCell(
-                    dataModel: data[index],
-                    onPressedSizesButton: onPressedAvailableSizesButton,
-                    onValueChange: onPressedValueChange,
-                  );
-                },
-              ),
-            ],
+        itemBuilder: (context1, snapshot, item) {
+          return CustomerCell(
+            dataModel: item as CustomerModel,
+            onPressedSizesButton: onPressedAvailableSizesButton,
+            onValueChange: onPressedValueChange,
           );
         },
       ),

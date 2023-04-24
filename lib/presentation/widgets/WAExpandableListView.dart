@@ -37,7 +37,8 @@ import 'package:fatima_admin/Views/SizeChartPage.dart';
 import 'package:fatima_admin/Views/SizesPage.dart';
 import 'package:fatima_admin/Views/SlidersPage.dart';
 import 'package:fatima_admin/Views/UsersPage.dart';
-import 'package:fatima_admin/utils/WAConstants.dart';
+import 'package:fatima_admin/presentation/pages/ShopUsersPage.dart';
+import 'package:fatima_admin/utils/Callback.dart';
 import 'package:flutter/material.dart';
 
 class WAExpandableListView extends StatefulWidget {
@@ -171,7 +172,7 @@ class _WAExpandableListViewState extends State<WAExpandableListView> {
         break;
       case 'Users':
         Navigator.push(context,
-            MaterialPageRoute(builder: (context) => const UsersPage()));
+            MaterialPageRoute(builder: (context) => const ShopUsersPage()));
         break;
       case 'Change Password':
         Navigator.push(

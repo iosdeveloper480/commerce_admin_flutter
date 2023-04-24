@@ -1,6 +1,6 @@
 import 'package:fatima_admin/domain/models/SizesModel.dart';
 import 'package:fatima_admin/presentation/widgets/WANetworkImageView.dart';
-import 'package:fatima_admin/utils/WAConstants.dart';
+import 'package:fatima_admin/utils/Callback.dart';
 import 'package:flutter/material.dart';
 
 class SizesChartCell extends StatefulWidget {

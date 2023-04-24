@@ -4,6 +4,8 @@ import 'package:fatima_admin/Cells/CategoryCell.dart';
 import 'package:fatima_admin/Helpers/JSONLoader.dart';
 import 'package:fatima_admin/domain/models/CategoryModel.dart';
 import 'package:fatima_admin/presentation/widgets/WABottomButton.dart';
+import 'package:fatima_admin/presentation/widgets/WAListFutureBuilder.dart';
+import 'package:fatima_admin/presentation/widgets/WAListView.dart';
 import 'package:fatima_admin/presentation/widgets/WASegmentedControl.dart';
 import 'package:fatima_admin/views/BaseDrawerPage.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,7 +20,6 @@ class CategoriesPage extends StatefulWidget {
 }
 
 class _CategoriesPageState extends State<CategoriesPage> {
-  late List<CategoryModel> categories = [];
   bool catSelected = false;
   String buttonTitle = 'Add Category';
 
@@ -26,26 +27,21 @@ class _CategoriesPageState extends State<CategoriesPage> {
   void initState() {
     super.initState();
     catSelected = true;
-    loadData('categories');
   }
 
-  loadData(String fileName) {
-    JSONLoader().loadJsonData(fileName).then((value) => {
-          setState(() {
-            categories =
-                CategoryResponseModel.fromJson(json.decode(value)).data;
-          })
-        });
+  Future<List<CategoryModel>> getData(String fileName) async {
+    await Future.delayed(const Duration(seconds: 1));
+    var data = await JSONLoader().loadJsonData(fileName);
+    var list = CategoryResponseModel.fromJson(json.decode(data)).data;
+    return list;
   }
 
   onCatSelected(int selected) {
     setState(() {
       if (selected == 0) {
-        loadData('categories');
         catSelected = true;
         buttonTitle = 'Add Category';
       } else {
-        loadData('sub_categories');
         catSelected = false;
         buttonTitle = 'Add Sub Category';
       }
@@ -80,13 +76,14 @@ class _CategoriesPageState extends State<CategoriesPage> {
                   ],
                 ),
                 Expanded(
-                  child: ListView.builder(
-                    itemCount: categories.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      //Row Container
+                  child: WAListFutureBuilder<List<CategoryModel>>(
+                    future: catSelected
+                        ? getData('categories')
+                        : getData('sub_categories'),
+                    itemBuilder: (context1, snapshot, item) {
                       return CategoryCell(
                         isCategory: catSelected,
-                        category: categories[index],
+                        category: item as CategoryModel,
                         onTapEdit: onTapEdit,
                         onTapDelete: onTapDelete,
                       );

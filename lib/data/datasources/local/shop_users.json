@@ -1,0 +1,7 @@
+{
+  "success": true,
+  "data": [
+    {"id":"2","shop_id":"2","name":"admin","user_name":"admin1@gmail.com","pass":"25d55ad283aa400af464c76d713c07ad","role":"2","main":"1","status":"1","firebase":null,"notifications":"1","lang":"0","hide":"0"},
+    {"id":"3","shop_id":"1","name":"Employee","user_name":"Employee","pass":"25d55ad283aa400af464c76d713c07ad","role":"2","main":"0","status":"1","firebase":null,"notifications":"1","lang":"0","hide":"0"}
+  ]
+}

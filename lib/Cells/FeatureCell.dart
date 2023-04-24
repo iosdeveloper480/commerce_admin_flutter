@@ -6,7 +6,7 @@ import 'package:fatima_admin/presentation/widgets/WAIconButton.dart';
 import 'package:fatima_admin/presentation/widgets/WANetworkImageView.dart';
 import 'package:fatima_admin/presentation/widgets/WATagListView.dart';
 import 'package:fatima_admin/presentation/widgets/WATitleSubtitleRow.dart';
-import 'package:fatima_admin/utils/WAConstants.dart';
+import 'package:fatima_admin/utils/Callback.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -63,17 +63,11 @@ class _FeatureCellState extends State<FeatureCell> {
                   height: 110,
                   child:
                       WANetworkImageView(imageUrl: widget.category.img ?? ''),
-                  // FadeInImage(
-                  //   fit: BoxFit.cover,
-                  //   image: NetworkImage(widget.category.img ?? ''),
-                  //   placeholder: const AssetImage('images/logo.png'),
-                  // ),
                 ),
               ),
               Expanded(
                 child: Container(
                   alignment: Alignment.topLeft,
-                  // color: CustomColors.shadow,
                   padding: const EdgeInsets.all(8),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -112,7 +106,10 @@ class _FeatureCellState extends State<FeatureCell> {
                       ),
                       Visibility(
                         visible: !widget.isFeatured,
-                        child: const Text('Features: alkdjflkajf'),
+                        child: const WATitleSubtitleRow(
+                          title: 'Features:- ',
+                          subtitle: 'widget.category.nameAr',
+                        ),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
